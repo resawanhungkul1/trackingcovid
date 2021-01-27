@@ -7,7 +7,7 @@ active
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+             
 
                 <div class="card-body">
                     @if (session('succes'))
@@ -24,13 +24,17 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Nama Kecamatan</th>
                                                         <th>Nama kelurahan</th>
-                                                        <th>Action</th>
+                                                        <th>
+                                                            <center>
+                                                                Action
+                                                            </center>
+                                                        </th>
                                                     </tr>
                                                     
                                                 </thead>
@@ -44,8 +48,8 @@ active
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kelurahan-edit',$item->id)}}">Edit</a>
-                                                            <a class="btn btn-outline-danger" href="{{route('kelurahan-delete',$item->id)}}">Delete</a>
+                                                             <a class="btn btn-outline-success" href="{{route('kelurahan-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                            <a class="btn btn-outline-danger" href="{{route('kelurahan-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>
                                                     </tr>

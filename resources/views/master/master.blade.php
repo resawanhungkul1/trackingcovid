@@ -21,18 +21,13 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
- 
+  
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
         @yield('content')
-
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -54,5 +49,6 @@
 <!-- ./wrapper -->
 
 @include('template.js');
+@stack('js')
 </body>
 </html>

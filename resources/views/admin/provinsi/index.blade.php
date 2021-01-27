@@ -1,5 +1,8 @@
 @extends('master.master')
 @push('provinsi')
+active  
+@endpush
+@push('provinsi')
 active
 @endpush
 @section('content')
@@ -7,7 +10,7 @@ active
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+              
 
                 <div class="card-body">
                     @if (session('succes'))
@@ -24,11 +27,10 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-                                                        <th>Kode Provinsi</th>
                                                         <th>Nama Provinsi</th>
                                                         <th>Acion</th>
                                                     </tr>
@@ -39,13 +41,11 @@ active
                                                     @foreach ($provinsi as $item)
                                                     <tr>
                                                         <th >{{$no++}}</th>
-                                                        <th>{{$item->kode_provinsi}}</th>
                                                         <th>{{$item->nm_provinsi}}</th>
                                                         <td>
                                                           
-                                                            <a class="btn btn-outline-warning" href="{{route('provinsi-show',$item->id)}}">Show</a>
-                                                            <a class="btn btn-outline-success" href="{{route('provinsi-edit',$item->id)}}">Edit</a>
-                                                            <a class="btn btn-outline-danger" href="{{route('provinsi-delete',$item->id)}}">Delete</a>
+                                                             <a class="btn btn-outline-success"   href="{{route('provinsi-edit',$item->id)}}" ><i class="fas fa-eye">Edit</i></a>
+                                                            <a class="btn btn-outline-danger" href="{{route('provinsi-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>
                                                     </tr>
@@ -56,6 +56,7 @@ active
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

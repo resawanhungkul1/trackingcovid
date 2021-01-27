@@ -1,13 +1,13 @@
 @extends('master.master')
 @push('rw')
-active
+active  
 @endpush
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+               
 
                 <div class="card-body">
                     @if (session('succes'))
@@ -24,7 +24,7 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
@@ -44,8 +44,8 @@ active
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('rw-edit',$item->id)}}">Edit</a>
-                                                            <a class="btn btn-outline-danger" href="{{route('rw-delete',$item->id)}}">Delete</a>
+                                                             <a class="btn btn-outline-success" href="{{route('rw-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                            <a class="btn btn-outline-danger" href="{{route('rw-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>
                                                     </tr>

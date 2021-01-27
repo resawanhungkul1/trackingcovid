@@ -38,6 +38,17 @@ class RwController extends Controller
      */
     public function store(Request $request)
     {
+        $pesan=[
+            'nm_rw.max' => 'Nama Terlalu panjang',          
+            'nm_rw.required' => 'Rw Harus Di isi'
+         
+        
+        ];
+        $this->validate($request,[
+          
+            
+            'nm_kecamatan' => 'required|max:100'
+        ],$pesan);
         $rw=new Rw();
         $rw->id_kelurahan=$request->id_kelurahan;
         $rw->nm_rw=$request->nm_rw;
@@ -78,6 +89,7 @@ class RwController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $rw= Rw::findOrFail($id);
         $rw->id_kelurahan=$request->id_kelurahan;
         $rw->nm_rw=$request->nm_rw;

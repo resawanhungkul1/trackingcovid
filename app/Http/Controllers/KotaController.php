@@ -40,9 +40,20 @@ class KotaController extends Controller
      */
     public function store(Request $request)
     {
+        $pesan=[
+
+           
+            'nm_kota.required' => 'Kota Harus Di isi',
+            'nm_kota.unique' => 'Kota Sudah ada'
+        
+        ];
+        $this->validate($request,[
+          
+            
+            'nm_kkota' => 'required|nm_kota:unique'
+        ],$pesan);
         $kota=new Kota();
         $kota->id_provinsi=$request->id_provinsi;
-        $kota->kode_kota=$request->kode_kota;
         $kota->nm_kota=$request->nm_kota;
         $kota->save();
         return redirect()->route('kota')->with(['succes'=>'Data Berhasil di simpan']);
@@ -83,9 +94,9 @@ class KotaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $kota=Kota::findOrFail($id);
         $kota->id_provinsi=$request->id_provinsi;
-        $kota->kode_kota=$request->kode_kota;
         $kota->nm_kota=$request->nm_kota;
         $kota->save();
         return redirect()->route('kota')->with(['succes'=>'Data Berhasil di edi']);

@@ -7,7 +7,7 @@ active
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+             
 
                 <div class="card-body">
                     @if (session('succes'))
@@ -24,11 +24,12 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Nama Kota</th>
+                                                        <th>Kode Kecamatan</th>
                                                         <th>Nama Kecamatan</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -40,12 +41,13 @@ active
                                                     <tr>
                                                         <th >{{$no++}}</th>
                                                         <th>{{$item->kota->nm_kota}}</th>
+                                                        <th>{{$item->kode_kecamatan}}</th>
                                                         <th>{{$item->nm_kecamatan}}</th>
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kecamatan-edit',$item->id)}}">Edit</a>
-                                                            <a class="btn btn-outline-danger" href="{{route('kecamatan-delete',$item->id)}}">Delete</a>
+                                                             <a class="btn btn-outline-success" href="{{route('kecamatan-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                            <a class="btn btn-outline-danger" href="{{route('kecamatan-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>
                                                     </tr>

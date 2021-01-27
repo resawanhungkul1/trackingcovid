@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\DB;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+use Validator;
 
 class ProvinsiController extends Controller
 {
@@ -36,12 +39,20 @@ class ProvinsiController extends Controller
      */
     public function store(Request $request)
     {
+        $pesan=[
+            'nama_provinsi.required' => 'provinsi Harus Diisi',
+            'nama_provinsi.max' => 'provinsi sudah Maximal',
+        
+        ];
+        $this->validate($request,[
+          
+            'nama_provinsi' => 'required|max:50'
+        ],$pesan);
         $provinsi = new Provinsi();
-        $provinsi->kode_provinsi = $request->kode_provinsi;
         $provinsi->nm_provinsi = $request->nama_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi')
-                ->with(['succces'=>'provinsi berhasil dibuat']);
+                ->with(['succes'=>'provinsi berhasil dibuat']);
     }
 
     /**
@@ -76,8 +87,8 @@ class ProvinsiController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $provinsi = Provinsi::findOrFail($id);
-        $provinsi->kode_provinsi = $request->kode_provinsi;
         $provinsi->nm_provinsi = $request->nama_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi')

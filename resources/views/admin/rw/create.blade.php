@@ -1,8 +1,12 @@
 @extends('master.master')
+@push('rw')
+active  
+@endpush
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+              <div class="card">
                 <div class="card-header">
                     Tambah Data Rw
                 </div>
@@ -20,7 +24,8 @@
                         </div>
                         <div class="from-group">
                             <label for="">Nama Rw</label>
-                            <input type="text" name="nm_rw" class="form-control" >
+                            <input type="text" name="nm_rw" class="form-control" value="{{old('nm_rw')}}">
+                            {!! $errors->first('nm_rw','<p class="help-block" style="color:red">:message</p>') !!}
                          
                         </div>
                         <div class="form-group">
@@ -31,4 +36,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

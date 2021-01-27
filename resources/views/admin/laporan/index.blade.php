@@ -1,5 +1,5 @@
 @extends('master.master')
-@push('provinsi')
+@push('laporan')
 active
 @endpush
 @section('content')
@@ -7,7 +7,7 @@ active
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+               
 
                 <div class="card-body">
                     @if (session('succes'))
@@ -24,7 +24,7 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
