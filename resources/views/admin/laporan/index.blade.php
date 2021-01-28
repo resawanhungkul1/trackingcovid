@@ -24,7 +24,7 @@ active
                                 <div class="col-md-12">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered">
+                                            <table id="example1" class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
@@ -68,3 +68,15 @@ active
     </div>
 </div>
 @endsection
+@push('js')
+    
+<script>
+    $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+
+    });
+  </script>
+  @endpush

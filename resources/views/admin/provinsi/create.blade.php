@@ -15,10 +15,15 @@ active
                         @csrf
                         <div class="from-group">
                             <label for="">Nama Provinsi</label>
-                            <input type="text" name="nama_provinsi" class="form-control" value="{{old('nama_provinsi')}}">
-                            {!! $errors->first('nama_provinsi','<p class="help-block" style="color:red">:message</p>') !!}
+                            <input type="text" name="nm_provinsi" class="form-control @error('nm_provinsi') is-invalid @enderror"  value="{{old('nm_provinsi')}}">
+                            @error('nm_provinsi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{$message}}</strong>
+                                </span>
+                            @enderror
                          
                         </div>
+                        <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary" > Simpan </button>
                         </div>

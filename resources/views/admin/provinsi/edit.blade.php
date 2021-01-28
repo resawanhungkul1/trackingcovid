@@ -16,9 +16,10 @@ active
                                     @method('PUT')
                                     <div class="from-group">
                                         <label for="">Nama Provinsi</label>
-                                        <input type="text" name="nama_provinsi" class="form-control" value="{{$provinsi->nm_provinsi}}">
+                                        <input type="text" name="nm_provinsi" class="form-control" value="{{$provinsi->nm_provinsi}}">
                                      
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                     </div>

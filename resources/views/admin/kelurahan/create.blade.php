@@ -24,10 +24,15 @@ active
                                     </div>
                                     <div class="from-group">
                                         <label for="">Nama Kelurahan</label>
-                                        <input type="text" name="nm_kelurahan" class="form-control" value="{{old('nm_kelurahan')}}" >
-                                        {!! $errors->first('nm_kelurahan','<p class="help-block" style="color:red">:message</p>') !!}
+                                        <input type="text" name="nm_kelurahan" class="form-control @error ('nm_kelurahan') is-invalid @enderror" value="{{old('nm_kelurahan')}}" >
+                                        @error('nm_kelurahan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                         @enderror
                                      
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                     </div>

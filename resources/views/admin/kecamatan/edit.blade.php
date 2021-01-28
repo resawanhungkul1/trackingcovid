@@ -26,15 +26,16 @@ active
                                     <div class="from-group">
                                         <label for="">Kode Kecamatan</label>
                                             <input type="text" name="kode_kecamatan" value="{{$kecamatan->kode_kecamatan}}" class="form-control" >
-                                            {!! $errors->first('kode_kecamatan','<p class="help-block" style="color:red">:message</p>') !!}
+                                            
                                     </div>
                                     <div class="from-group">
                                         <label for="">Nama Kecamatan</label>
                                             <input type="text" name="nm_kecamatan" value="{{$kecamatan->nm_kecamatan}}" class="form-control" >
-                                            {!! $errors->first('nm_kecamatan','<p class="help-block" style="color:red">:message</p>') !!}
+                                          
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
+                                        <br>
                                     </div>
                                 </form>
                             </div>

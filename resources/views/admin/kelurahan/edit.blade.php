@@ -26,8 +26,9 @@ active
                                     <div class="from-group">
                                         <label for="">Nama kelurahan</label>
                                             <input type="text" name="nm_kelurahan" value="{{$kelurahan->nm_kelurahan}}" class="form-control" >
-                                            {!! $errors->first('nm_kelurahan','<p class="help-block" style="color:red">:message</p>') !!}
+                                          
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                     </div>

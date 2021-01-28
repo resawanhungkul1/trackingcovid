@@ -44,13 +44,14 @@ class KotaController extends Controller
 
            
             'nm_kota.required' => 'Kota Harus Di isi',
-            'nm_kota.unique' => 'Kota Sudah ada'
+            'nm_kota.alpha' => 'Kota Tidak Boleh angka',
+            'nm_kota.unique'=>'Sudah Ada'
         
         ];
         $this->validate($request,[
           
             
-            'nm_kkota' => 'required|nm_kota:unique'
+            'nm_kota' => 'required|alpha|unique:kotas'
         ],$pesan);
         $kota=new Kota();
         $kota->id_provinsi=$request->id_provinsi;

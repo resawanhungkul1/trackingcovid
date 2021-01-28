@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelurahan;
 use App\Models\Kecamatan;
 use Illuminate\Http\Request;
+use Validator;
 
 class KelurahanController extends Controller
 {
@@ -41,12 +42,14 @@ class KelurahanController extends Controller
         $pesan=[
            
             'nm_kelurahan.required' => 'Kelurahan Harus Di isi',
-            'nm_kelurahan.unique' => 'Kelurahan Sudah ada'
+            'nm_kelurahan.alpha'=>'Tidak Boleh Menggunakan Angka',
+            'nm_kelurahan.unique'=>'Data Sudah Ada'
+           
         
         ];
         $this->validate($request,[
           
-            'nm_kelurahan' => 'required|nm_kelurahan:unique'
+            'nm_kelurahan' => 'required|alpha|unique:kelurahans'
         ],$pesan);
         $kelurahan=new Kelurahan();
         $kelurahan->id_kecamatan=$request->id_kecamatan;

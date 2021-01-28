@@ -40,16 +40,18 @@ class ProvinsiController extends Controller
     public function store(Request $request)
     {
         $pesan=[
-            'nama_provinsi.required' => 'provinsi Harus Diisi',
-            'nama_provinsi.max' => 'provinsi sudah Maximal',
+            'nm_provinsi.required' => 'provinsi Harus Diisi',
+            'nm_provinsi.max' => 'provinsi sudah Maximal',
+            'nm_provinsi.unique'=>'Data Sudah Ada'
+          
         
         ];
         $this->validate($request,[
           
-            'nama_provinsi' => 'required|max:50'
+            'nm_provinsi' => 'required|max:50|unique:provinsis'
         ],$pesan);
         $provinsi = new Provinsi();
-        $provinsi->nm_provinsi = $request->nama_provinsi;
+        $provinsi->nm_provinsi = $request->nm_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi')
                 ->with(['succes'=>'provinsi berhasil dibuat']);
@@ -89,7 +91,7 @@ class ProvinsiController extends Controller
     {
         
         $provinsi = Provinsi::findOrFail($id);
-        $provinsi->nm_provinsi = $request->nama_provinsi;
+        $provinsi->nm_provinsi = $request->nm_provinsi;
         $provinsi->save();
         return redirect()->route('provinsi')
                 ->with(['succes'=>'provinsi berhasil update']);

@@ -24,16 +24,25 @@ active
                                     </div>
                                     <div class="from-group">
                                         <label for="">Kode Kecamatan</label>
-                                        <input type="text" name="kode_kecamatan" class="form-control" value="{{old('kode_kecamatan')}}" >
-                                        {!! $errors->first('kode_kecamatan','<p class="help-block" style="color:red">:message</p>') !!}
+                                        <input type="text" name="kode_kecamatan" class="form-control @error ('kode_kecamatan') is-invalid @enderror" value="{{old('kode_kecamatan')}}" >
+                                        @error('kode_kecamatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                         @enderror
                                      
                                     </div>
                                     <div class="from-group">
                                         <label for="">Nama Kecamatan</label>
-                                        <input type="text" name="nm_kecamatan" class="form-control" value="{{old('nm_kecamatan')}}" >
-                                        {!! $errors->first('nm_kecamatan','<p class="help-block" style="color:red">:message</p>') !!}
+                                        <input type="text" name="nm_kecamatan" class="form-control @error ('nm_kecamatan') is-invalid @enderror" value="{{old('nm_kecamatan')}}" >
+                                        @error('nm_kecamatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                         @enderror
                                      
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                     </div>

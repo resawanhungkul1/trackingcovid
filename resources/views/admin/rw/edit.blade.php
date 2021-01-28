@@ -29,6 +29,7 @@ active
                                             {!! $errors->first('nm_rw','<p class="help-block" style="color:red">:message</p>') !!}
                                      
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                     </div>
