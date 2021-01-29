@@ -46,6 +46,7 @@ class Kasus2Controller extends Controller
         $laporan->tanggal=$request->tanggal;
         $laporan->save();
         return redirect()->route('laporan')->with(['succes'=>'Data Berhasil Di simpan']);
+ 
     }
 
     /**

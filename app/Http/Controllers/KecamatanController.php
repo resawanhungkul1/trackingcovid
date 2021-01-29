@@ -41,7 +41,6 @@ class KecamatanController extends Controller
     {
         $pesan=[
             'kode_kecamatan.required' => 'Kode Kecamatan Harus Diisi',
-            'kode_kecamatan.max' => 'Kode sudah Maximal',
             'kode_kecamatan.numeric' => 'Kode Harus Angka',
             'nm_kecamatan.alpha'=> 'Nama Kecamatan Tidak Boleh menggunakan Angka',
             'nm_kecamatan.required' => 'Nama Harus Di isi',
@@ -52,7 +51,7 @@ class KecamatanController extends Controller
         ];
         $this->validate($request,[
           
-            'kode_kecamatan' => 'required|max:100|numeric',
+            'kode_kecamatan' => 'required|numeric',
             'nm_kecamatan' => 'required|alpha|unique:kecamatans'
         ],$pesan);
         $kecamatan=new Kecamatan();

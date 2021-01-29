@@ -28,6 +28,7 @@ active
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
+                                                        <th>Lokasi</th>
                                                         <th>Nama Rw</th>
                                                         <th>Jumlah Positif</th>
                                                         <th>Jumlah Meninggal</th>
@@ -42,6 +43,10 @@ active
                                                     @foreach ($laporan as $item)  
                                                     <tr>
                                                         <th >{{$no++}}</th>
+                                                        <td><center>Kelurahan : {{$item->rw->kelurahan->nm_kelurahan}}<br>
+                                                            Kecamatan : {{$item->rw->kelurahan->kecamatan->nm_kecamatan}}<br>
+                                                            Kota : {{$item->rw->kelurahan->kecamatan->kota->nm_kota}}<br>
+                                                            Provinsi : {{$item->rw->kelurahan->kecamatan->kota->provinsi->nm_provinsi}}</center></td>
                                                         <th>{{$item->rw->nm_rw}}</th>
                                                         <th>{{$item->jumlah_positif}}</th>
                                                         <th>{{$item->jumlah_meninggal}}</th>
