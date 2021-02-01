@@ -48,7 +48,7 @@ active
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kelurahan-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                             <a class="btn btn-outline-success" href="{{route('kelurahan-edit',$item->id)}}"><i class="fas fa-edit">Edit</i></a>
                                                             <a class="btn btn-outline-danger" href="{{route('kelurahan-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>

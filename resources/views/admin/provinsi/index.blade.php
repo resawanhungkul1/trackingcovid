@@ -44,7 +44,7 @@ active
                                                         <th>{{$item->nm_provinsi}}</th>
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success"   href="{{route('provinsi-edit',$item->id)}}" ><i class="fas fa-eye">Edit</i></a>
+                                                             <a class="btn btn-outline-success"   href="{{route('provinsi-edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
                                                             <a class="btn btn-outline-danger" href="{{route('provinsi-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>

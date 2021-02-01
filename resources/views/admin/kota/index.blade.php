@@ -43,7 +43,7 @@ active
                                                         <th>{{$item->nm_kota}}</th>
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kota-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                             <a class="btn btn-outline-success" href="{{route('kota-edit',$item->id)}}"><i class="fas fa-edit">Edit</i></a>
                                                             <a class="btn btn-outline-danger" href="{{route('kota-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>

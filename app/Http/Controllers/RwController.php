@@ -41,7 +41,7 @@ class RwController extends Controller
         $pesan=[
             'nm_rw.max' => 'Nama Terlalu panjang',          
             'nm_rw.required' => 'Rw Harus Di isi',
-            'nm_rw.unique' => 'Rw Sudah Ada'
+        
             
          
         
@@ -49,7 +49,7 @@ class RwController extends Controller
         $this->validate($request,[
           
             
-            'nm_rw' => 'required|max:100|unique:rws'
+            'nm_rw' => 'required|max:100'
         ],$pesan);
         $rw=new Rw();
         $rw->id_kelurahan=$request->id_kelurahan;

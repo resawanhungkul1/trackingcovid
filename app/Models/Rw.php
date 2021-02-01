@@ -13,9 +13,9 @@ class Rw extends Model
     {
         return $this->belongsTo(Kelurahan::class,'id_kelurahan');
     }
-    public function kasus2()
+    public function kasus()
     {
-        return $this->hasMany(Kasus2::class);
+        return $this->belongsTo(Kasus2::class,'id_rw');
         
     }
 }

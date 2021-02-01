@@ -14,4 +14,9 @@ class Kasus2 extends Model
         return $this->belongsTo(Rw::class,'id_rw');
         
     }
+
+    public function tracking()
+    {
+        return $this->hasMany('App\Models\Kasus2','id_kasus2');
+    }
 }

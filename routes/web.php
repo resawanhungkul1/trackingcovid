@@ -95,6 +95,9 @@ Route::get('/laporan/edit/{id}', [App\Http\Controllers\Kasus2Controller::class, 
 Route::put('/laporan-update/{id}', [App\Http\Controllers\Kasus2Controller::class, 'update'])->name('laporan-update');
 Route::get('/laporan-delete/{id}', [App\Http\Controllers\Kasus2Controller::class, 'destroy'])->name('laporan-delete');
 
+use App\Http\Controllers\Kasus2Controller;
+Route::resource('tracking',Kasus2Controller::class);
+
 
 
 

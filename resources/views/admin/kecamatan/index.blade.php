@@ -5,10 +5,6 @@ active
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-             
-
                 <div class="card-body">
                     @if (session('succes'))
                         <div class="alert alert-success" role="alert">
@@ -46,7 +42,7 @@ active
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kecamatan-edit',$item->id)}}"><i class="fas fa-eye">Edit</i></a>
+                                                             <a class="btn btn-outline-success" href="{{route('kecamatan-edit',$item->id)}}"><i class="fas fa-edit">Edit</i></a>
                                                             <a class="btn btn-outline-danger" href="{{route('kecamatan-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
                                                    
                                                         </td>
@@ -60,8 +56,8 @@ active
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+           
+        
     </div>
 </div>
 @endsection

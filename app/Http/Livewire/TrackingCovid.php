@@ -6,7 +6,7 @@ use App\Models\Kelurahan;
 use App\Models\Kecamatan;
 use App\Models\Kota;
 use App\Models\Provinsi;
-use App\Models\Tracking;
+use App\Models\Kasus2;
 use Livewire\Component;
 
 class TrackingCovid extends Component
@@ -42,7 +42,7 @@ class TrackingCovid extends Component
             $this->selectedRw = $selectedRw;
             $this->idt = $idt;
             if (!is_null($idt)) {
-                $this->tracking1 = Tracking::findOrFail($idt);
+                $this->tracking1 = Kasus2::findOrFail($idt);
             }
     
             if (!is_null($selectedRw)) {
@@ -91,7 +91,7 @@ class TrackingCovid extends Component
         public function updatedSelectedKelurahan($kelurahan)
         {
             if (!is_null($kelurahan)) {
-                $this->rw = RW::where('id_kelurahan', $kelurahan)->get();
+                $this->rw = Rw::where('id_kelurahan', $kelurahan)->get();
             }else{
                 $this->selectedRw = NULL;
             }

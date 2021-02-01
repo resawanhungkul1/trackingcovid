@@ -68,9 +68,10 @@ class Kasus2Controller extends Controller
      */
     public function edit($id)
     {
-        $laporan=Kasus2::findOrFail($id);
+        $laporan = Kasus2::findOrFail($id);
         $rw=Rw::all();
-        return view('admin.laporan.edit',compact('laporan','rw'));
+        $selected=$laporan->rw->pluck('id')->toArray();
+        return view('admin.laporan.edit',compact('laporan','rw','selected'));
     }
 
     /**
@@ -100,7 +101,7 @@ class Kasus2Controller extends Controller
      */
     public function destroy($id)
     {
-        $laporan=Laporan::findOrFail($id);
+        $laporan=Kasus2::findOrFail($id);
         $laporan->delete();
         return redirect()->route('laporan')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
