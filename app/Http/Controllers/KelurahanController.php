@@ -43,13 +43,13 @@ class KelurahanController extends Controller
            
             'nm_kelurahan.required' => 'Kelurahan Harus Di isi',
             'nm_kelurahan.alpha'=>'Tidak Boleh Menggunakan Angka',
-            'nm_kelurahan.unique'=>'Data Sudah Ada'
+           
            
         
         ];
         $this->validate($request,[
           
-            'nm_kelurahan' => 'required|alpha|unique:kelurahans'
+            'nm_kelurahan' => 'required|alpha'
         ],$pesan);
         $kelurahan=new Kelurahan();
         $kelurahan->id_kecamatan=$request->id_kecamatan;
