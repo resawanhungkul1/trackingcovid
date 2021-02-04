@@ -1,5 +1,10 @@
 <?php
-
+use App\Http\Controllers\ProvinsiController;
+use App\Http\Controllers\KotaController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\KelurahanController;
+use App\Http\Controllers\RwController;
+use App\Http\Controllers\Kasus2Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -94,20 +99,19 @@ Route::get('/laporan/edit/{id}', [App\Http\Controllers\Kasus2Controller::class, 
 Route::put('/laporan-update/{id}', [App\Http\Controllers\Kasus2Controller::class, 'update'])->name('laporan-update');
 Route::get('/laporan-delete/{id}', [App\Http\Controllers\Kasus2Controller::class, 'destroy'])->name('laporan-delete');
 
-use App\Http\Controllers\ProvinsiController;
+Route::group([ 'middleware' => ['auth']], function () {
+
 Route::resource('provinsi',ProvinsiController::class);
-use App\Http\Controllers\KotaController;
+
 Route::resource('kota',KotaController::class);
-use App\Http\Controllers\KecamatanController;
+
 Route::resource('kecamatan',KecamatanController::class);
-use App\Http\Controllers\KelurahanController;
+
 Route::resource('kelurahan',KelurahanController::class);
-use App\Http\Controllers\RwController;
+
 Route::resource('rw',RwController::class);
-use App\Http\Controllers\Kasus2Controller;
+
 Route::resource('tracking',Kasus2Controller::class);
 
-
-
-
+});
 

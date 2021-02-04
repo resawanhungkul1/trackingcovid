@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\DB;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 use Validator;
 
@@ -55,8 +57,7 @@ class ProvinsiController extends Controller
         $provinsi->nama_provinsi = $request->nama_provinsi;
         $provinsi->kode_provinsi = $request->kode_provinsi;
         $provinsi->save();
-        return redirect()->route('provinsi.index')
-                ->with(['succes'=>'provinsi berhasil dibuat']);
+        return redirect()->route('provinsi.index')->withSuccess('Data Berhasil Ditambahkan!');
     }
 
     /**

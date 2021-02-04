@@ -22,11 +22,11 @@ class ProvinsiController extends Controller
     {
         //validate data
         $validator = Validator::make($request->all(), [
-            'nm_provinsi'     => 'required',
+            'nama_provinsi'     => 'required',
             'kode_provinsi'   => 'required',
         ],
             [
-                'nm_provinsi.required' => 'Masukkan Title Post !',
+                'nama_provinsi.required' => 'Masukkan Title Post !',
                 'kode_provinsi.required' => 'Masukkan Content Post !',
             ]
         );
@@ -42,7 +42,7 @@ class ProvinsiController extends Controller
         } else {
 
             $provinsi = Provinsi::create([
-                'nm_provinsi'     => $request->input('nm_provinsi'),
+                'nama_provinsi'     => $request->input('nama_provinsi'),
                 'kode_provinsi'   => $request->input('kode_provinsi')
             ]);
 
@@ -85,11 +85,11 @@ class ProvinsiController extends Controller
     {
         //validate data
         $validator = Validator::make($request->all(), [
-            'nm_provinsi'     => 'required',
+            'nama_provinsi'     => 'required',
             'kode_provinsi'   => 'required',
         ],
             [
-                'nm_provinsi.required' => 'Masukkan  Nama !',
+                'nama_provinsi.required' => 'Masukkan  Nama !',
                 'kode_provinsi.required' => 'Masukkan Kode !',
             ]
         );
@@ -105,7 +105,7 @@ class ProvinsiController extends Controller
         } else {
 
             $provinsi = Provinsi::whereId($id)->update([
-                'nm_provinsi'     => $request->input('nm_provinsi'),
+                'nama_provinsi'     => $request->input('nama_provinsi'),
                 'kode_provinsi'   => $request->input('kode_provinsi'),
             ]);
 
