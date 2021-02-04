@@ -11,12 +11,17 @@ active
                                 Tambah Data Provinsi
                             </div>
                             <div class="card-body">
-                                <form action="{{route('provinsi-update',$provinsi->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('provinsi.update',$provinsi->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="from-group">
                                         <label for="">Nama Provinsi</label>
-                                        <input type="text" name="nm_provinsi" class="form-control" value="{{$provinsi->nm_provinsi}}">
+                                        <input type="text" name="nama_provinsi" class="form-control" value="{{$provinsi->nama_provinsi}}">
+                                     
+                                    </div>
+                                    <div class="from-group">
+                                        <label for="">Kode Provinsi</label>
+                                        <input type="text" name="kode_provinsi" class="form-control" value="{{$provinsi->kode_provinsi}}">
                                      
                                     </div>
                                     <br>

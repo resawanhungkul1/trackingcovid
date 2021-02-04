@@ -43,20 +43,22 @@ class KotaController extends Controller
         $pesan=[
 
            
-            'nm_kota.required' => 'Kota Harus Di isi',
-            
+            'nama_kota.required' => 'Kota Harus Di isi',
+            'kode_kota.required' => 'Kode Kota Harus Di isi',
         
         ];
         $this->validate($request,[
           
             
-            'nm_kota' => 'required|'
+            'nama_kota' => 'required|',
+            'kode_kota' => 'required|'
         ],$pesan);
         $kota=new Kota();
         $kota->id_provinsi=$request->id_provinsi;
-        $kota->nm_kota=$request->nm_kota;
+        $kota->kode_kota=$request->kode_kota;
+        $kota->nama_kota=$request->nama_kota;
         $kota->save();
-        return redirect()->route('kota')->with(['succes'=>'Data Berhasil di simpan']);
+        return redirect()->route('kota.index')->with(['succes'=>'Data Berhasil di simpan']);
         
         
     }
@@ -97,9 +99,10 @@ class KotaController extends Controller
         
         $kota=Kota::findOrFail($id);
         $kota->id_provinsi=$request->id_provinsi;
-        $kota->nm_kota=$request->nm_kota;
+        $kota->kode_kota=$request->kode_kota;
+        $kota->nama_kota=$request->nama_kota;
         $kota->save();
-        return redirect()->route('kota')->with(['succes'=>'Data Berhasil di edi']);
+        return redirect()->route('kota.index')->with(['succes'=>'Data Berhasil di edi']);
     }
 
     /**
@@ -112,6 +115,6 @@ class KotaController extends Controller
     {
         $kota=Kota::findOrFail($id);
         $kota->delete();
-        return redirect()->route('kota')->with(['succes'=>'Data Berhasil Di Hapus']);
+        return redirect()->route('kota.index')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
 }

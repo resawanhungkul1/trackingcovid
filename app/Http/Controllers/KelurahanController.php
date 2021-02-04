@@ -41,21 +41,21 @@ class KelurahanController extends Controller
     {
         $pesan=[
            
-            'nm_kelurahan.required' => 'Kelurahan Harus Di isi',
-            'nm_kelurahan.alpha'=>'Tidak Boleh Menggunakan Angka',
+            'nama_kelurahan.required' => 'Kelurahan Harus Di isi',
+            'nama_kelurahan.alpha'=>'Tidak Boleh Menggunakan Angka',
            
            
         
         ];
         $this->validate($request,[
           
-            'nm_kelurahan' => 'required|alpha'
+            'nama_kelurahan' => 'required|alpha'
         ],$pesan);
         $kelurahan=new Kelurahan();
         $kelurahan->id_kecamatan=$request->id_kecamatan;
-        $kelurahan->nm_kelurahan=$request->nm_kelurahan;
+        $kelurahan->nama_kelurahan=$request->nama_kelurahan;
         $kelurahan->save();
-        return redirect()->route('kelurahan')->with(['succes'=>'Data Berhasil Di Tambah']);
+        return redirect()->route('kelurahan.index')->with(['succes'=>'Data Berhasil Di Tambah']);
     }
 
     /**
@@ -94,9 +94,9 @@ class KelurahanController extends Controller
         
         $kelurahan= Kelurahan::findOrFail($id);
         $kelurahan->id_kecamatan=$request->id_kecamatan;
-        $kelurahan->nm_kelurahan=$request->nm_kelurahan;
+        $kelurahan->nama_kelurahan=$request->nama_kelurahan;
         $kelurahan->save();
-        return redirect()->route('kelurahan')->with(['succes'=>'Data Berhasil Di Edit']);
+        return redirect()->route('kelurahan.index')->with(['succes'=>'Data Berhasil Di Edit']);
     }
 
     /**
@@ -109,6 +109,6 @@ class KelurahanController extends Controller
     {
         $kelurahan=Kelurahan::findOrFail($id);
         $kelurahan->delete();
-        return redirect()->route('kelurahan')->with(['succes'=>'Data Berhasil Di Hapus']);
+        return redirect()->route('kelurahan.index')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
 }

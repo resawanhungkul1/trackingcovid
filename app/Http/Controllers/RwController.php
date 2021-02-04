@@ -39,8 +39,8 @@ class RwController extends Controller
     public function store(Request $request)
     {
         $pesan=[
-            'nm_rw.max' => 'Nama Terlalu panjang',          
-            'nm_rw.required' => 'Rw Harus Di isi',
+            'nama_rw.max' => 'Nama Terlalu panjang',          
+            'nama_rw.required' => 'Rw Harus Di isi',
         
             
          
@@ -49,13 +49,13 @@ class RwController extends Controller
         $this->validate($request,[
           
             
-            'nm_rw' => 'required|max:100'
+            'nama_rw' => 'required|max:100'
         ],$pesan);
         $rw=new Rw();
         $rw->id_kelurahan=$request->id_kelurahan;
-        $rw->nm_rw=$request->nm_rw;
+        $rw->nama_rw=$request->nama_rw;
         $rw->save();
-        return redirect()->route('rw')->with(['succes'=>'Data Berhasil Di Tambah']);
+        return redirect()->route('rw.index')->with(['succes'=>'Data Berhasil Di Tambah']);
     }
 
     /**
@@ -94,9 +94,9 @@ class RwController extends Controller
         
         $rw= Rw::findOrFail($id);
         $rw->id_kelurahan=$request->id_kelurahan;
-        $rw->nm_rw=$request->nm_rw;
+        $rw->nama_rw=$request->nama_rw;
         $rw->save();
-        return redirect()->route('rw')->with(['succes'=>'Data Berhasil Di Edit']);
+        return redirect()->route('rw.index')->with(['succes'=>'Data Berhasil Di Edit']);
     }
 
     /**
@@ -109,6 +109,6 @@ class RwController extends Controller
     {
         $rw=Rw::findOrFail($id);
         $rw->delete();
-        return redirect()->route('rw')->with(['succes'=>'Data Berhasil Di Hapus']);
+        return redirect()->route('rw.index')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
 }

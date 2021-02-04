@@ -63,37 +63,37 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('provinsi')}}" class="nav-link @stack('provinsi')">
+                <a href="{{route('provinsi.index')}}" class="nav-link @stack('provinsi')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Provinsi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('kota')}}" class="nav-link @stack('kota')">
+                <a href="{{route('kota.index')}}" class="nav-link @stack('kota')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kota</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('kecamatan')}}" class="nav-link @stack('kecamatan')">
+                <a href="{{route('kecamatan.index')}}" class="nav-link @stack('kecamatan')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kecamatan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('kelurahan')}}" class="nav-link @stack('kelurahan')">
+                <a href="{{route('kelurahan.index')}}" class="nav-link @stack('kelurahan')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kelurahan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('rw')}}" class="nav-link @stack('rw')">
+                <a href="{{route('rw.index')}}" class="nav-link @stack('rw')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rw</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('laporan')}}" class="nav-link @stack('laporan')">
+                <a href="{{route('tracking.index')}}" class="nav-link @stack('laporan')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan</p>
                 </a>

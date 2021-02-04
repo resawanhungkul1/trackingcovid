@@ -18,14 +18,14 @@ active
                                       
                                         <select name="id_kecamatan" id="" class="form-control" name="id_kelurahan[]">
                                             @foreach ($kecamatan as $item)
-                                                <option value="{{$item->id}}">{{$item->nm_kecamatan}}</option>
+                                                <option value="{{$item->id}}">{{$item->nama_kecamatan}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="from-group">
                                         <label for="">Nama Kelurahan</label>
-                                        <input type="text" name="nm_kelurahan" class="form-control @error ('nm_kelurahan') is-invalid @enderror" value="{{old('nm_kelurahan')}}" >
-                                        @error('nm_kelurahan')
+                                        <input type="text" name="nama_kelurahan" class="form-control @error ('nama_kelurahan') is-invalid @enderror" value="{{old('nm_kelurahan')}}" >
+                                        @error('nama_kelurahan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{$message}}</strong>
                                         </span>

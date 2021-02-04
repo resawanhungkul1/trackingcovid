@@ -9,6 +9,7 @@ class Provinsi extends Model
 {
     use HasFactory;
     protected $table='provinsis';
+    protected $fillable=['nm_provinsi','kode_provinsi'];
     public function kota()
     {
         return $this->hasMany(Kota::class);

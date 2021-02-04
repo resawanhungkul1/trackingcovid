@@ -18,7 +18,7 @@ active
 
                     <div class="card">
                         <div class="card-header">Rw
-                                <a href="{{route('rw-create')}}" class="float-right btn btn-primary"> Tambah </a>
+                                <a href="{{route('rw.create')}}" class="float-right btn btn-primary"> Tambah </a>
                         </div>   
                             <div class="row">
                                 <div class="col-md-12">
@@ -39,14 +39,17 @@ active
                                                     @foreach ($rw as $item)
                                                     <tr>
                                                         <th >{{$no++}}</th>
-                                                        <th>{{$item->kelurahan->nm_kelurahan}}</th>
-                                                        <th>{{$item->nm_rw}}</th>
+                                                        <th>{{$item->kelurahan->nama_kelurahan}}</th>
+                                                        <th>{{$item->nama_rw}}</th>
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('rw-edit',$item->id)}}"><i class="fas fa-edit">Edit</i></a>
-                                                            <a class="btn btn-outline-danger" href="{{route('rw-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
-                                                   
+                                                            <form action="{{route('rw.destroy',$item->id)}}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                 <a class="btn btn-outline-success"   href="{{route('rw.edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
+                                                                 <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin ?')">Hapus<i class="fa fa-trash-alt"></i>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                     @endforeach

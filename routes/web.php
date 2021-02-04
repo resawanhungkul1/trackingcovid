@@ -44,7 +44,6 @@ Route::get('/rw',function(){
 Route::get('/laporan',function(){
     return view('admin.laporan.index');
 });
-
 //provinsi
 Route::get('/provinsi', [App\Http\Controllers\ProvinsiController::class, 'index'])->name('provinsi');
 Route::get('/provinsi_create', [App\Http\Controllers\ProvinsiController::class, 'create'])->name('provinsi-create');
@@ -95,6 +94,16 @@ Route::get('/laporan/edit/{id}', [App\Http\Controllers\Kasus2Controller::class, 
 Route::put('/laporan-update/{id}', [App\Http\Controllers\Kasus2Controller::class, 'update'])->name('laporan-update');
 Route::get('/laporan-delete/{id}', [App\Http\Controllers\Kasus2Controller::class, 'destroy'])->name('laporan-delete');
 
+use App\Http\Controllers\ProvinsiController;
+Route::resource('provinsi',ProvinsiController::class);
+use App\Http\Controllers\KotaController;
+Route::resource('kota',KotaController::class);
+use App\Http\Controllers\KecamatanController;
+Route::resource('kecamatan',KecamatanController::class);
+use App\Http\Controllers\KelurahanController;
+Route::resource('kelurahan',KelurahanController::class);
+use App\Http\Controllers\RwController;
+Route::resource('rw',RwController::class);
 use App\Http\Controllers\Kasus2Controller;
 Route::resource('tracking',Kasus2Controller::class);
 

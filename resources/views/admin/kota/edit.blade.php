@@ -11,7 +11,7 @@ active
                                 Edit Data Kota
                             </div>
                             <div class="card-body">
-                                <form action="{{route('kota-update',$kota->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('kota.update',$kota->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="from-group">
@@ -19,13 +19,18 @@ active
                                       
                                         <select name="id_provinsi" id="" class="form-control" name="id_provinsi[]">
                                             @foreach ($provinsi as $item)
-                                                <option value="{{$item->id}}" {{$item->id==$kota->id_provinsi ? 'selected' : ''}}>{{$item->nm_provinsi}}</option>
+                                                <option value="{{$item->id}}" {{$item->id==$kota->id_provinsi ? 'selected' : ''}}>{{$item->nama_provinsi}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="from-group">
+                                        <label for="">Kode Kota</label>
+                                        <input type="text" name="kode_kota" class="form-control" value="{{$kota->kode_kota}}">
+                                     
+                                    </div>
+                                    <div class="from-group">
                                         <label for="">Nama Kota</label>
-                                        <input type="text" name="nm_kota" class="form-control" value="{{$kota->nm_kota}}">
+                                        <input type="text" name="nama_kota" class="form-control" value="{{$kota->nama_kota}}">
                                      
                                     </div>
                                     <br>

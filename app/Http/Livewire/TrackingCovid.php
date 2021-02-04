@@ -32,13 +32,13 @@ class TrackingCovid extends Component
             $this->kota = Kota::with('provinsi')->get();
             $this->kecamatan = Kecamatan::whereHas('kota', function ($query) {
                 $query->whereId(request()->input('id_kota', 0));
-            })->pluck('nm_kecamatan', 'id');
+            })->pluck('nama_kecamatan', 'id');
             $this->kelurahan = Kelurahan::whereHas('kecamatan', function ($query) {
                 $query->whereId(request()->input('id_kecamatan', 0));
-            })->pluck('nm_kelurahan', 'id');
+            })->pluck('nama_kelurahan', 'id');
             $this->rw = Rw::whereHas('kelurahan', function ($query) {
                 $query->whereId(request()->input('id_kelurahan', 0));
-            })->pluck('nm_rw', 'id');
+            })->pluck('nama_rw', 'id');
             $this->selectedRw = $selectedRw;
             $this->idt = $idt;
             if (!is_null($idt)) {

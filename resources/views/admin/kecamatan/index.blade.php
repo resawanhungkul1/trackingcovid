@@ -14,7 +14,7 @@ active
 
                     <div class="card">
                         <div class="card-header">Kecamatan
-                                <a href="{{route('kecamatan-create')}}" class="float-right btn btn-primary"> Tambah </a>
+                                <a href="{{route('kecamatan.create')}}" class="float-right btn btn-primary"> Tambah </a>
                         </div>   
                             <div class="row">
                                 <div class="col-md-12">
@@ -25,7 +25,6 @@ active
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Nama Kota</th>
-                                                        <th>Kode Kecamatan</th>
                                                         <th>Nama Kecamatan</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -36,15 +35,17 @@ active
                                                     @foreach ($kecamatan as $item)
                                                     <tr>
                                                         <th >{{$no++}}</th>
-                                                        <th>{{$item->kota->nm_kota}}</th>
-                                                        <th>{{$item->kode_kecamatan}}</th>
-                                                        <th>{{$item->nm_kecamatan}}</th>
+                                                        <th>{{$item->kota->nama_kota}}</th>
+                                                        <th>{{$item->nama_kecamatan}}</th>
                                                         
                                                         <td>
                                                           
-                                                             <a class="btn btn-outline-success" href="{{route('kecamatan-edit',$item->id)}}"><i class="fas fa-edit">Edit</i></a>
-                                                            <a class="btn btn-outline-danger" href="{{route('kecamatan-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
-                                                   
+                                                            <form action="{{route('kecamatan.destroy',$item->id)}}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                 <a class="btn btn-outline-success"   href="{{route('kecamatan.edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
+                                                                 <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin ?')">Hapus<i class="fa fa-trash-alt"></i>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                     @endforeach

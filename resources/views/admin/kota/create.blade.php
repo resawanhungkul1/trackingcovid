@@ -19,14 +19,24 @@ active
                                       
                                         <select name="id_provinsi" id="" class="form-control" name="id_provinsi[]">
                                             @foreach ($provinsi as $item)
-                                                <option value="{{$item->id}}">{{$item->nm_provinsi}}</option>
+                                                <option value="{{$item->id}}">{{$item->nama_provinsi}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="from-group">
+                                        <label for="">Kode Kota</label>
+                                        <input type="text" name="kode_kota" class="form-control @error ('kode_kota') is-invalid @enderror" value="{{old('kode_kota')}}" >
+                                        @error('kode_kota')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                         @enderror
+                                     
+                                    </div>
+                                    <div class="from-group">
                                         <label for="">Nama Kota</label>
-                                        <input type="text" name="nm_kota" class="form-control @error ('nm_kota') is-invalid @enderror" value="{{old('nm_kota')}}" >
-                                        @error('nm_kota')
+                                        <input type="text" name="nama_kota" class="form-control @error ('nama_kota') is-invalid @enderror" value="{{old('nm_kota')}}" >
+                                        @error('nama_kota')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{$message}}</strong>
                                         </span>

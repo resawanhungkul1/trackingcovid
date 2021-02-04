@@ -40,9 +40,8 @@ class KecamatanController extends Controller
     public function store(Request $request)
     {
         $pesan=[
-            'kode_kecamatan.required' => 'Kode Kecamatan Harus Diisi',
-            'kode_kecamatan.numeric' => 'Kode Harus Angka',
-            'nm_kecamatan.required' => 'Nama Harus Di isi',
+
+            'nama_kecamatan.required' => 'Nama Harus Di isi',
          
          
          
@@ -50,15 +49,13 @@ class KecamatanController extends Controller
         ];
         $this->validate($request,[
           
-            'kode_kecamatan' => 'required|numeric',
-            'nm_kecamatan' => 'required'
+            'nama_kecamatan' => 'required'
         ],$pesan);
         $kecamatan=new Kecamatan();
         $kecamatan->id_kota=$request->id_kota;
-        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
-        $kecamatan->nm_kecamatan=$request->nm_kecamatan;
+        $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();
-        return redirect()->route('kecamatan')->with(['succes'=>'Data Berhasil Di simpan']);
+        return redirect()->route('kecamatan.index')->with(['succes'=>'Data Berhasil Di simpan']);
     }
 
     /**
@@ -97,10 +94,9 @@ class KecamatanController extends Controller
         
         $kecamatan=Kecamatan::findOrFail($id);
         $kecamatan->id_kota=$request->id_kota;
-        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
-        $kecamatan->nm_kecamatan=$request->nm_kecamatan;
+        $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();
-        return redirect()->route('kecamatan')->with(['succes'=>'Data Berhasil Di Update']);
+        return redirect()->route('kecamatan.index')->with(['succes'=>'Data Berhasil Di Update']);
     }
 
     /**
@@ -113,6 +109,6 @@ class KecamatanController extends Controller
     {
         $kecamatan=Kecamatan::findOrFail($id);
         $kecamatan->delete();
-        return redirect()->route('kecamatan')->with(['succes'=>'Data Berhasil Di Hapus']);
+        return redirect()->route('kecamatan.index')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
 }

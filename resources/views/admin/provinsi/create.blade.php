@@ -15,8 +15,18 @@ active
                         @csrf
                         <div class="from-group">
                             <label for="">Nama Provinsi</label>
-                            <input type="text" name="nm_provinsi" class="form-control @error('nm_provinsi') is-invalid @enderror"  value="{{old('nm_provinsi')}}">
-                            @error('nm_provinsi')
+                            <input type="text" name="nama_provinsi" class="form-control @error('nama_provinsi') is-invalid @enderror"  value="{{old('nama_provinsi')}}">
+                            @error('nama_provinsi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{$message}}</strong>
+                                </span>
+                            @enderror
+                         
+                        </div>
+                        <div class="from-group">
+                            <label for="">Kode Provinsi</label>
+                            <input type="text" name="kode_provinsi" class="form-control @error('kode_provinsi') is-invalid @enderror"  value="{{old('kode_provinsi')}}">
+                            @error('kode_provinsi')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{$message}}</strong>
                                 </span>

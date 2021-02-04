@@ -11,7 +11,7 @@ active
                                 Edit Data
                             </div>
                             <div class="card-body">
-                                <form action="{{route('rw-update',$rw->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('rw.update',$rw->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="from-group">
@@ -19,14 +19,14 @@ active
                                       
                                         <select name="id_kelurahan" id="" class="form-control" name="id_kelurahan[]">
                                             @foreach ($kelurahan as $item)
-                                                <option value="{{$item->id}}" {{$item->id==$item->id_kelurahan ? 'selected' : ''}} >{{$item->nm_kelurahan}}</option>
+                                                <option value="{{$item->id}}" {{$item->id==$item->id_kelurahan ? 'selected' : ''}} >{{$item->nama_kelurahan}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="from-group">
                                         <label for="">Nama Rw</label>
-                                            <input type="text" name="nm_rw" value="{{$rw->nm_rw}}" class="form-control" >
-                                            {!! $errors->first('nm_rw','<p class="help-block" style="color:red">:message</p>') !!}
+                                            <input type="text" name="nama_rw" value="{{$rw->nama_rw}}" class="form-control" >
+                                         
                                      
                                     </div>
                                     <br>

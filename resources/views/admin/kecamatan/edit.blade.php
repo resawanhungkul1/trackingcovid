@@ -11,7 +11,7 @@ active
                                 Edit Kecamatan
                             </div>
                             <div class="card-body">
-                                <form action="{{route('kecamatan-update',$kecamatan->id)}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('kecamatan.update',$kecamatan->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="from-group">
@@ -19,18 +19,13 @@ active
                                       
                                         <select name="id_kota" id="" class="form-control" name="id_kota[]">
                                             @foreach ($kota as $item)
-                                                <option value="{{$item->id}}" {{$item->id==$item->id_kota ? 'selected' : ''}} >{{$item->nm_kota}}</option>
+                                                <option value="{{$item->id}}" {{$item->id==$item->id_kota ? 'selected' : ''}} >{{$item->nama_kota}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="from-group">
-                                        <label for="">Kode Kecamatan</label>
-                                            <input type="text" name="kode_kecamatan" value="{{$kecamatan->kode_kecamatan}}" class="form-control" >
-                                            
-                                    </div>
-                                    <div class="from-group">
                                         <label for="">Nama Kecamatan</label>
-                                            <input type="text" name="nm_kecamatan" value="{{$kecamatan->nm_kecamatan}}" class="form-control" >
+                                            <input type="text" name="nama_kecamatan" value="{{$kecamatan->nama_kecamatan}}" class="form-control" >
                                           
                                     </div>
                                     <div class="form-group">

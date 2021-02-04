@@ -39,11 +39,11 @@ active
                                                     @foreach ($laporan as $item)  
                                                     <tr>
                                                         <th >{{$no++}}</th>
-                                                        <td><center>Kelurahan : {{$item->rw->kelurahan->nm_kelurahan}}<br>
-                                                            Kecamatan : {{$item->rw->kelurahan->kecamatan->nm_kecamatan}}<br>
-                                                            Kota : {{$item->rw->kelurahan->kecamatan->kota->nm_kota}}<br>
-                                                            Provinsi : {{$item->rw->kelurahan->kecamatan->kota->provinsi->nm_provinsi}}</center></td>
-                                                        <th>{{$item->rw->nm_rw}}</th>
+                                                        <td><center>Kelurahan : {{$item->rw->kelurahan->nama_kelurahan}}<br>
+                                                            Kecamatan : {{$item->rw->kelurahan->kecamatan->nama_kecamatan}}<br>
+                                                            Kota : {{$item->rw->kelurahan->kecamatan->kota->nama_kota}}<br>
+                                                            Provinsi : {{$item->rw->kelurahan->kecamatan->kota->provinsi->nama_provinsi}}</center></td>
+                                                        <th>{{$item->rw->nama_rw}}</th>
                                                         <th>{{$item->jumlah_positif}}</th>
                                                         <th>{{$item->jumlah_meninggal}}</th>
                                                         <th>{{$item->jumlah_sembuh}}</th>

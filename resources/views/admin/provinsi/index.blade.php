@@ -21,7 +21,7 @@ active
 
                     <div class="card">
                         <div class="card-header">Provinsi
-                                <a href="{{route('provinsi-create')}}" class="float-right btn btn-primary"> Tambah </a>
+                                <a href="{{route('provinsi.create')}}" class="float-right btn btn-primary"> Tambah </a>
                         </div>   
                             <div class="row">
                                 <div class="col-md-12">
@@ -32,6 +32,7 @@ active
                                                     <tr>
                                                         <th>No</th>
                                                         <th>Nama Provinsi</th>
+                                                        <th>Kode Provinsi</th>
                                                         <th>Acion</th>
                                                     </tr>
                                                     
@@ -41,12 +42,15 @@ active
                                                     @foreach ($provinsi as $item)
                                                     <tr>
                                                         <th >{{$no++}}</th>
-                                                        <th>{{$item->nm_provinsi}}</th>
+                                                        <th>{{$item->nama_provinsi}}</th>
+                                                        <th>{{$item->kode_provinsi}}</th>
                                                         <td>
-                                                          
-                                                             <a class="btn btn-outline-success"   href="{{route('provinsi-edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
-                                                            <a class="btn btn-outline-danger" href="{{route('provinsi-delete',$item->id)}}"><i class="fas fa-trash">Hapus</i></a>
-                                                   
+                                                          <form action="{{route('provinsi.destroy',$item->id)}}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                             <a class="btn btn-outline-success"   href="{{route('provinsi.edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
+                                                             <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin ?')">Hapus<i class="fa fa-trash-alt"></i>
+                                                        </form>
                                                         </td>
                                                     </tr>
                                                     @endforeach
