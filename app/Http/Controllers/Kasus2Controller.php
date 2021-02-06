@@ -45,7 +45,7 @@ class Kasus2Controller extends Controller
         $laporan->jumlah_sembuh=$request->jumlah_sembuh;
         $laporan->tanggal=$request->tanggal;
         $laporan->save();
-        return redirect()->route('tracking.index')->with(['succes'=>'Data Berhasil Di simpan']);
+        return redirect()->route('laporan.index')->with(['succes'=>'Data Berhasil Di simpan']);
  
     }
 
@@ -90,7 +90,7 @@ class Kasus2Controller extends Controller
         $laporan->jumlah_sembuh=$request->jumlah_sembuh;
         $laporan->tanggal=$request->tanggal;
         $laporan->save();
-        return redirect()->route('tracking.index')->with(['succes'=>'Data Berhasil Di Update']);
+        return redirect()->route('laporan.index')->with(['succes'=>'Data Berhasil Di Update']);
     }
 
     /**
@@ -103,6 +103,6 @@ class Kasus2Controller extends Controller
     {
         $laporan=Kasus2::findOrFail($id);
         $laporan->delete();
-        return redirect()->route('tracking.index')->with(['succes'=>'Data Berhasil Di Hapus']);
+        return redirect()->route('laporan.index')->with(['succes'=>'Data Berhasil Di Hapus']);
     }
 }

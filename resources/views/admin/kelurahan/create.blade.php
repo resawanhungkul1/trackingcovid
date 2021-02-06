@@ -11,7 +11,7 @@ active
                                 Tambah Data Kecamatan
                             </div>
                             <div class="card-body">
-                                <form action="{{route('kelurahan-store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('kelurahan.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="from-group">
                                         <label for="">Nama Kecamatan</label>

@@ -11,7 +11,7 @@ active
                                 Tambah Data Kecamatan
                             </div>
                             <div class="card-body">
-                                <form action="{{route('kecamatan-store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('kecamatan.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="from-group">
                                         <label for="">Nama Kota</label>
@@ -26,6 +26,16 @@ active
                                         <label for="">Nama Kecamatan</label>
                                         <input type="text" name="nama_kecamatan" class="form-control @error ('nama_kecamatan') is-invalid @enderror" value="{{old('nm_kecamatan')}}" >
                                         @error('nama_kecamatan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{$message}}</strong>
+                                        </span>
+                                         @enderror
+                                     
+                                    </div>
+                                    <div class="from-group">
+                                        <label for="">Kode Kecamatan</label>
+                                        <input type="text" name="kode_kecamatan" class="form-control @error ('kode_kecamatan') is-invalid @enderror" value="{{old('kode_kecamatan')}}" >
+                                        @error('kode_kecamatan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{$message}}</strong>
                                         </span>

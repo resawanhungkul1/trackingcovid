@@ -14,7 +14,7 @@ active
 
                     <div class="card">
                         <div class="card-header">laporan
-                                <a href="{{route('laporan-create')}}" class="float-right btn btn-primary"> Tambah </a>
+                                <a href="{{route('laporan.create')}}" class="float-right btn btn-primary"> Tambah </a>
                         </div>   
                             <div class="row">
                                 <div class="col-md-12">
@@ -50,8 +50,8 @@ active
                                                         <th>{{$item->tanggal}}</th>
                                                         <td>
                                                           
-                                                              <a class="btn btn-outline-success" href="{{route('laporan-edit',$item->id)}}"><i class="fas fa-edit"></i></a>
-                                                            <a class="btn btn-outline-danger" href="{{route('laporan-delete',$item->id)}}"><i class="fas fa-trash"></i></a>
+                                                              <a class="btn btn-outline-success" href="{{route('laporan.edit',$item->id)}}"><i class="fas fa-edit"></i></a>
+                                                            <a class="btn btn-outline-danger" href="{{route('laporan.destroy',$item->id)}}"><i class="fas fa-trash"></i></a>
                                                    
                                                         </td>
                                                     </tr>

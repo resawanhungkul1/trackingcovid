@@ -12,7 +12,7 @@ active
                               
                             </div>
                             <div class="card-body">
-                                <form action="{{route('laporan-store')}}" class="form-horizontal m-t-30" method="post">
+                                <form action="{{route('laporan.store')}}" class="form-horizontal m-t-30" method="post">
                                     @csrf
                                     @livewireScripts
                                     @livewire('tracking-covid')

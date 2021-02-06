@@ -11,7 +11,7 @@ active
                                 Edit Data Kota
                             </div>
                             <div class="card-body">
-                                <form action="{{route('kota-store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('kota.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                    
                                     <div class="from-group">

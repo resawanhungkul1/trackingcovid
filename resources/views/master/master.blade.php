@@ -49,6 +49,7 @@
 <!-- ./wrapper -->
 
 @include('template.js');
+@include('sweetalert::alert')
 @stack('js')
 </body>
 </html>

@@ -11,7 +11,7 @@ active
                 <div class="card-header">{{ __('Data Rw') }}</div>
 
                 <div class="card-body">
-                    <form action="{{route('provinsi-store')}}" method="post" enctype="multipart/form-data" id="provinsi_form">
+                    <form action="{{route('provinsi.store')}}" method="post" enctype="multipart/form-data" id="provinsi_form">
                         @csrf
                         <div class="from-group">
                             <label for="">Nama Provinsi</label>

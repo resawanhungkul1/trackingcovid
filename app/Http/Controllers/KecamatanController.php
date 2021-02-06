@@ -51,7 +51,9 @@ class KecamatanController extends Controller
           
             'nama_kecamatan' => 'required'
         ],$pesan);
+        
         $kecamatan=new Kecamatan();
+        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
         $kecamatan->id_kota=$request->id_kota;
         $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();
@@ -92,7 +94,9 @@ class KecamatanController extends Controller
     public function update(Request $request, $id)
     {
         
+        
         $kecamatan=Kecamatan::findOrFail($id);
+        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
         $kecamatan->id_kota=$request->id_kota;
         $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();

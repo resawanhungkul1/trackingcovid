@@ -93,7 +93,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('tracking.index')}}" class="nav-link @stack('laporan')">
+                <a href="{{route('laporan.index')}}" class="nav-link @stack('laporan')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan</p>
                 </a>
