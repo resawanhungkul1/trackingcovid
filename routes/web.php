@@ -108,4 +108,5 @@ Route::resource('rw',RwController::class);
 Route::resource('laporan',Kasus2Controller::class);
 
 });
+ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'provinsi'])->name('dashboard');
 

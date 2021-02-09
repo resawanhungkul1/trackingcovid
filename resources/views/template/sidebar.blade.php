@@ -15,7 +15,7 @@
           <img src="{{asset('assets/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{url('index')}}" class="d-block">{{Auth::user()->name}}</a>
+          <a href="{{route('dashboard')}}" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -98,6 +98,12 @@
                   <p>Laporan</p>
                 </a>
               </li>
+              <li class="nav-item">
+                  <a href="{{route('dashboard')}}" class="nav-link @stack('dasbhoard')">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>dashboard</p>
+                  </a>
+                </li>
             </ul>
           </li>
         </ul>

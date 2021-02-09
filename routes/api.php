@@ -36,3 +36,4 @@ Route::get('rw', [ApiController::class,'rw']);
 Route::get('rw/{id?}', [ApiController::class,'showrw']);
 Route::get('provinsi2/{id?}',[ApiController::class, 'show']);
 Route::get('indonesia', [ApiController::class,'indonesia']);
+Route::get('global', [ApiController::class,'global']);

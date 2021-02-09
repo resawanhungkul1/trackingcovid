@@ -42,14 +42,14 @@ class KelurahanController extends Controller
         $pesan=[
            
             'nama_kelurahan.required' => 'Kelurahan Harus Di isi',
-            'nama_kelurahan.alpha'=>'Tidak Boleh Menggunakan Angka',
+        
            
            
         
         ];
         $this->validate($request,[
           
-            'nama_kelurahan' => 'required|alpha'
+            'nama_kelurahan' => 'required'
         ],$pesan);
         $kelurahan=new Kelurahan();
         $kelurahan->id_kecamatan=$request->id_kecamatan;
