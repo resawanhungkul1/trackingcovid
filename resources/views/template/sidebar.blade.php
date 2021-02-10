@@ -99,7 +99,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                  <a href="{{route('dashboard')}}" class="nav-link @stack('dasbhoard')">
+                  <a href="{{url('/dashboard')}}" class="nav-link @stack('dasbhoard')">
                     <i class="far fa-circle nav-icon"></i>
                     <p>dashboard</p>
                   </a>

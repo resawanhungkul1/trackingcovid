@@ -69,7 +69,7 @@
             <h2 class="mb-0 number-font"><?php echo $positif['value'] ?></h2>
             <p class="text-white mb-0">ORANG</p>
            </div>
-           <div class="ml-auto"> <img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"> </div>
+           <div class="ml-auto"> <img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"> </div>
           </div>
          </div>
         </div>
@@ -97,7 +97,7 @@
             <h2 class="mb-0 number-font"><?php echo $meninggal['value'] ?></h2>
             <p class="text-white mb-0">ORANG</p>
            </div>
-           <div class="ml-auto"> <img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"> </div>
+           <div class="ml-auto"> <img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"> </div>
           </div>
          </div>
         </div>
@@ -108,9 +108,9 @@
           <div class="d-flex">
            <div class="text-white">
             <h2 class="text-white mb-0">INDONESIA</h2>
-            <p class="mb-0 number-font"><?php echo $id[0]['positif'] ?>&nbsp; POSITIF,<?php echo $id[0]['sembuh'] ?>SEMBUH, <?php echo $id[0]['meninggal'] ?>MENINGGAL</p>
+            <p class="mb-0 number-font"><?php echo $id[0]['positif'] ?>&nbsp; POSITIF, &nbsp;<?php echo $id[0]['sembuh'] ?>&nbsp;SEMBUH,&nbsp; <?php echo $id[0]['meninggal'] ?>&nbsp;MENINGGAL</p>
            </div>
-           <div class="ml-auto"> <img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"> </div>
+           <div class="ml-auto"> <img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"> </div>
           </div>
          </div>
         </div>
