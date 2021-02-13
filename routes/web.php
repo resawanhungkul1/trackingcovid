@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/backend', function () {
     return view('welcome');
 });
 
@@ -109,5 +109,5 @@ Route::resource('laporan',Kasus2Controller::class);
 
 });
  Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'provinsi'])->name('dashboard');
- Route::get('/tampilan', [App\Http\Controllers\TampilanController::class, 'tampilan'])->name('tampilan');
+ Route::get('/', [App\Http\Controllers\TampilanController::class, 'tampilan'])->name('tampilan');
  Route::get('/tampilan2', [App\Http\Controllers\TampilanController::class, 'tampilan2'])->name('tampilan2');

@@ -82,34 +82,14 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Dashboard</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Hotline</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 
     </div>
   </header><!-- End Header -->
@@ -129,7 +109,7 @@
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
-      <div class="container">
+       <div class="container">
 
         <div class="row">
 
@@ -167,18 +147,21 @@
             <div class="count-box">
               <i ><img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"></i>
               <h2 >INDONESIA</h2>
- 
+       
+                      <p class="mb-0 number-font">{{ $positif1 }}&nbsp; POSITIF, &nbsp;{{$sembuh1}}&nbsp;SEMBUH,&nbsp; {{$meninggal1}}&nbsp;MENINGGAL</p>
+          
+                
               
             </div>
           </div>
 
         </div>
 
-      </div>
+       </div>
     </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="" class="services">
       <div class="container">
 
         <div class="section-title">
@@ -187,59 +170,51 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                <div class="card-body" >
+                      <div class="table-responsive">
+                            <table id="example1" class="table table-bordered" >
+                               <thead>
+                                <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Provinsi</th>
+                                <th scope="col">Positif</th>
+                                <th scope="col">Sembuh</th>
+                                <th scope="col">Meninggal</th>
+                                </tr>
+                               </thead>
+                               <tbody>
+        
+                              @php
+                                  $no = 1;    
+                              @endphp
+                              <?php
+                                  foreach ($provinsi as  $value){
+          
+                                  
+                                  ?>
+                              <tr>
+                                  <td> <?php echo $no++ ?></td>
+                                  <td> {{$value->nama_provinsi}}</td>
+                                  <td> {{$value->jumlah_positif}}</td>
+                                  <td> {{$value->jumlah_sembuh}}</td>
+                                  <td> {{$value->jumlah_meninggal}}</td>
+                               
+                              
+                              </tr>
+                                  <?php 
+                              
+                              } ?>
+                               </tbody>
+                            </table>
+                      </div>
+                
+              </div>
+    
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-pills"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-hospital-user"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-dna"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-wheelchair"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-notes-medical"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
-
-        </div>
 
       </div>
     </section><!-- End Services Section -->
-    <section id="services" class="services">
+    <section id="" class="services">
         <div class="container">
   
           <div class="section-title">
@@ -249,9 +224,9 @@
   
           <div class="row">
               <div class="card-body" >
-             
-                          <table id="example1" class="table table-bordered table-striped" >
-                          <thead>
+                    <div class="table-responsive">
+                          <table id="example2" class="table table-bordered" >
+                             <thead>
                               <tr>
                               <th scope="col">No</th>
                               <th scope="col">Negara</th>
@@ -259,30 +234,30 @@
                               <th scope="col">Sembuh</th>
                               <th scope="col">Meninggal</th>
                               </tr>
-                          </thead>
-                          {{-- <tbody>
+                             </thead>
+                             <tbody>
       
                             @php
                                 $no = 1;    
                             @endphp
                             <?php
-                                for ($i= 0; $i <= 23; $i++){
+                                foreach ($dunia as $key => $value){
         
                                 
                                 ?>
                             <tr>
-                                <td> <?php echo $i+1 ?></td>
-                                <td> <?php echo $dunia[$i]['attributes']['Country_Region'] ?></td>
-                                <td> <?php echo $dunia[$i]['attributes']['Confirmed'] ?></td>
-                                <td><?php echo $dunia[$i]['attributes']['Recovered']?></td>
-                                <td><?php echo $dunia[$i]['attributes']['Deaths']?></td>
+                                <td> <?php echo $no++ ?></td>
+                                <td> <?php echo $value['attributes']['Country_Region'] ?></td>
+                                <td> <?php echo $value['attributes']['Confirmed'] ?></td>
+                                <td><?php echo $value['attributes']['Recovered']?></td>
+                                <td><?php echo $value['attributes']['Deaths']?></td>
                             </tr>
                                 <?php 
                             
                             } ?>
-                          </tbody> --}}
+                             </tbody>
                           </table>
-                         
+                    </div>
               
             </div>
   
@@ -290,6 +265,202 @@
   
         </div>
       </section><!-- End Services Section -->
+      <section id="counts" class="counts">
+          <div class="container">
+              <div class="section-title">
+                  <h2>Coronavirus Hotline Indonesia</h2>
+                  <p>Layanan darurat via telepon yang di sediakan oleh Kemkes dan juga Pemprov DKI Jakarta</p>
+                </div>
+                <br>
+           <div class="row">
+   
+             <div class="col-lg-3 col-md-6">
+               <div class="count-box">
+                 <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                   <br>
+                   <p>Kementrian Kesehatan</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+               <div class="count-box">
+                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                  <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                  <br>
+                  <p>Kementrian Kesehatan</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+               <div class="count-box">
+                 <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                 
+                 <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
+                 <br>
+                 <p>Pemprov DKI Jakarta</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+               <div class="count-box">
+                 <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                 
+                 <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
+                 <br>
+                 <p>Pemprov DKI Jakarta</p>
+                 
+               </div>
+             </div>
+    
+   
+           </div>
+           <br>
+         <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                    <br>
+                    <p>Kementrian Kesehatan</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                   <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                   <br>
+                   <p>Kementrian Kesehatan</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
+                  <br>
+                  <p>Pemprov DKI Jakarta</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
+                  <br>
+                  <p>Pemprov DKI Jakarta</p>
+                  
+                </div>
+              </div>
+          </div>
+          <br>
+          <div class="row">
+   
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                    <br>
+                    <p>Kementrian Kesehatan</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                   <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                   <br>
+                   <p>Kementrian Kesehatan</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
+                  <br>
+                  <p>Pemprov DKI Jakarta</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
+                  <br>
+                  <p>Pemprov DKI Jakarta</p>
+                  
+                </div>
+              </div>
+     
+    
+            </div>
+   
+        </div>
+       </section>
+
+
+      <section id="services" class="services">
+            <div class="container">
+      
+              <div class="section-title">
+                <h2>Services</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              </div>
+      
+              <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                 <a href="https://www.kompas.com/tren/read/2020/03/03/183500265/infografik-daftar-100-rumah-sakit-rujukan-penanganan-virus-corona">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-hospital"></i></div>
+                    <h4><a href="https://www.kompas.com/tren/read/2020/03/03/183500265/infografik-daftar-100-rumah-sakit-rujukan-penanganan-virus-corona">
+                        Daftar 100 Rumah Sakit Rujukan Penangan Virus Corona</a></h4>
+                    <p>Kompas</p>
+                  </div>
+                 </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                  <a href="https://www.unicef.org/indonesia/id/coronavirus">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-notes-medical"></i></div>
+                    <h4><a href="https://www.unicef.org/indonesia/id/coronavirus">
+                        Novel Corona Virus (COVID-19) Hal-hal Yang Perlu Anda Ketahui</a></h4>
+                    <p>Unicef Indonesia</p>
+                  </div>
+                  </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4  mt-md-0">
+                 <a href="https://infeksiemerging.kemkes.go.id/">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-hospital-user"></i></div>
+                    <h4><a href="https://infeksiemerging.kemkes.go.id/">Media Informasi Resmi Penyakit Infeksi Emerging</a></h4>
+                    <p>Kementrian Kesehaan</p>
+                  </div>
+                 </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                 <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-dna"></i></div>
+                    <h4><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                        Coronavirus Diase (COVID-19) Advice For The Public</a></h4>
+                    <p>WHO</p>
+                  </div>
+                 </a>
+                </div>
+      
+              </div>
+      
+            </div>
+      </section>
 
     <!-- ======= Appointment Section ======= -->
     <!-- End Appointment Section -->
@@ -310,6 +481,77 @@
     <!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+            <div class="container">
+      
+              <div class="section-title">
+                <h2>Contact</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              </div>
+            </div>
+      
+            <div>
+              <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+            </div>
+      
+            <div class="container">
+              <div class="row mt-5">
+      
+                <div class="col-lg-4">
+                  <div class="info">
+                    <div class="address">
+                      <i class="bi bi-geo-alt"></i>
+                      <h4>Location:</h4>
+                      <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+      
+                    <div class="email">
+                      <i class="bi bi-envelope"></i>
+                      <h4>Email:</h4>
+                      <p>info@example.com</p>
+                    </div>
+      
+                    <div class="phone">
+                      <i class="bi bi-phone"></i>
+                      <h4>Call:</h4>
+                      <p>+1 5589 55488 55s</p>
+                    </div>
+      
+                  </div>
+      
+                </div>
+      
+                <div class="col-lg-8 mt-5 mt-lg-0">
+      
+                  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                      </div>
+                      <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                      </div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                      <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="my-3">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                  </form>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+          </section>
     <!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -412,12 +654,10 @@
   <script>
     $(function () {
       $('#example1').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
+        "info":true,
+        "responsive": true,
+      });
+      $('#example2').DataTable({
         "responsive": true,
       });
     });

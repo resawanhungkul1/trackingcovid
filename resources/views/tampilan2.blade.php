@@ -126,13 +126,12 @@
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container">
-
         <div class="row">
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-3 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0">
                     <i><img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"></i>
                       <p>TOTAL POSITIF</p>
                         <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $positif['value'] ?> </span></h2>
@@ -141,7 +140,7 @@
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-3 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0">
                    
                     <i ><img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"></i>
                     <p>TOTAL SEMBUH</p>
@@ -151,7 +150,7 @@
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-3 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0">
                     <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
                     <p>TOTAL MENINGGAL</p>
                       <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $meninggal['value'] ?></span></h2>
@@ -160,11 +159,15 @@
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-3 mt-xl-0">
-                        <i ><img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"></i>
-                        <h2 >INDONESIA</h2>
-                    </div>
-                 </div>
+                        <div class="icon-box mt-4 mt-xl-0">
+                          <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
+                          <p>TOTAL MENINGGAL</p>
+                            <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $meninggal['value'] ?></span></h2>
+                          <br>
+                          <p>Orang</p>
+                        </div>
+                      </div>
+         
               </div>
             </div><!-- End .content-->
           </div>

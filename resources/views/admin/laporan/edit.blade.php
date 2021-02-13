@@ -12,7 +12,7 @@ active
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                            <form action="{{route('laporan-update', $laporan->id)}}" class="form-horizontal m-t-30" method="post">
+                            <form action="{{route('laporan.update', $laporan->id)}}" class="form-horizontal m-t-30" method="post">
                             @csrf
                             @method('put')
                             @livewire('tracking-covid',['selectedRw' => $laporan->id_rw, 'idt' => $laporan->id])
