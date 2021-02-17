@@ -124,165 +124,120 @@
   <main id="main">
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i><img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"></i>
-                      <p>TOTAL POSITIF</p>
-                        <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $positif['value'] ?> </span></h2>
-                        <br>
-                      <p>Orang</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                   
-                    <i ><img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"></i>
-                    <p>TOTAL SEMBUH</p>
-                     <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $sembuh['value'] ?></span></h2>
-                     <br>
-                    <p>Orang</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
-                    <p>TOTAL MENINGGAL</p>
-                      <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $meninggal['value'] ?></span></h2>
-                    <br>
-                    <p>Orang</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                        <div class="icon-box mt-4 mt-xl-0">
-                          <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
-                          <p>TOTAL MENINGGAL</p>
-                            <h2 class="mb-0 number-font"><span data-toggle="counter-up"><?php echo $meninggal['value'] ?></span></h2>
-                          <br>
-                          <p>Orang</p>
-                        </div>
-                      </div>
-         
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Why Us Section -->
+    <!-- End Why Us Section -->
 
 
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
+    <section id="dashboard" class="counts">
+       <div class="container">
 
         <div class="row">
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="icofont-doctor-alt"></i>
-              <span data-toggle="counter-up">85</span>
-              <p>Doctors</p>
+              <i><img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"></i>
+                <p>TOTAL POSITIF</p>
+                 <span data-toggle="counter-up"><?php echo $positif['value'] ?> </span>
+                <br>
+              <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
-              <i class="icofont-patient-bed"></i>
-              <span data-toggle="counter-up">18</span>
-              <p>Departments</p>
+              <i ><img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"></i>
+              <p>TOTAL SEMBUH</p>
+               <span data-toggle="counter-up"><?php echo $sembuh['value'] ?></span>
+               <br>
+              <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
-              <i class="icofont-laboratory"></i>
-              <span data-toggle="counter-up">8</span>
-              <p>Research Labs</p>
+              <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
+              <p>TOTAL MENINGGAL</p>
+                <span data-toggle="counter-up"><?php echo $meninggal['value'] ?></span>
+              <br>
+              <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
-              <i class="icofont-award"></i>
-              <span data-toggle="counter-up">150</span>
-              <p>Awards</p>
+              <i ><img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"></i>
+              <h2 >INDONESIA</h2>
+       
+                      <p class="mb-0 number-font">{{ $positif1 }}&nbsp; POSITIF <br>{{$sembuh1}}&nbsp;SEMBUH <br> {{$meninggal1}}&nbsp;MENINGGAL</p>
+          
+                
+              
             </div>
           </div>
 
         </div>
 
-      </div>
+       </div>
     </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-heart-beat"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+       <section id="services" class="services">
+            <div class="container">
+      
+              <div class="section-title">
+                <h2>Services</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              </div>
+      
+              <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                 <a href="https://www.kompas.com/tren/read/2020/03/03/183500265/infografik-daftar-100-rumah-sakit-rujukan-penanganan-virus-corona">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-hospital"></i></div>
+                    <h4><a href="https://www.kompas.com/tren/read/2020/03/03/183500265/infografik-daftar-100-rumah-sakit-rujukan-penanganan-virus-corona">
+                        Daftar 100 Rumah Sakit Rujukan Penangan Virus Corona</a></h4>
+                    <p>Kompas</p>
+                  </div>
+                 </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                  <a href="https://www.unicef.org/indonesia/id/coronavirus">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-notes-medical"></i></div>
+                    <h4><a href="https://www.unicef.org/indonesia/id/coronavirus">
+                        Novel Corona Virus (COVID-19) Hal-hal Yang Perlu Anda Ketahui</a></h4>
+                    <p>Unicef Indonesia</p>
+                  </div>
+                  </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4  mt-md-0">
+                 <a href="https://infeksiemerging.kemkes.go.id/">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-hospital-user"></i></div>
+                    <h4><a href="https://infeksiemerging.kemkes.go.id/">Media Informasi Resmi Penyakit Infeksi Emerging</a></h4>
+                    <p>Kementrian Kesehaan</p>
+                  </div>
+                 </a>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                 <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                  <div class="icon-box">
+                    <div class="icon"><i class="fas fa-dna"></i></div>
+                    <h4><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                        Coronavirus Diase (COVID-19) Advice For The Public</a></h4>
+                    <p>WHO</p>
+                  </div>
+                 </a>
+                </div>
+      
+              </div>
+      
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-drug"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-dna-alt-2"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-heartbeat"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-disabled"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-autism"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
+      </section><!-- End Services Section -->
 
 
 

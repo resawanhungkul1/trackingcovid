@@ -23,9 +23,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-}
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -170,7 +168,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  top: 40px;
   box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
 }
 
@@ -871,14 +868,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Counts
+# dasbhoard
 --------------------------------------------------------------*/
-.counts {
+.kotak {
   background: #f1f7fd;
   padding: 70px 0 60px;
 }
 
-.counts .count-box {
+.kotak .kotak-box {
   padding: 30px 30px 25px 30px;
   width: 100%;
   position: relative;
@@ -886,7 +883,7 @@ section {
   background: #fff;
 }
 
-.counts .count-box i {
+.kotak .kotak-box i {
   position: absolute;
   top: -25px;
   left: 50%;
@@ -902,19 +899,20 @@ section {
   height: 48px;
 }
 
-.counts .count-box span {
+.kotak .kotak-box span {
   font-size: 36px;
   display: block;
   font-weight: 600;
   color: #082744;
 }
 
-.counts .count-box p {
+.kotak .kotak-box p {
   padding: 0;
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
 }
+
 
 /*--------------------------------------------------------------
 # Services

@@ -25,6 +25,7 @@
   <link href="assets2/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets2/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets2/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="{{asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
@@ -57,20 +58,6 @@
             $dunia = json_decode($datadunia, TRUE);
           ?>
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +1 5589 55488 55
-      </div>
-      <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -82,8 +69,8 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="#contact">Dashboard</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Hotline</a></li>
+          <li><a class="nav-link scrollto" href="#dashboard">Dashboard</a></li>
+          <li><a class="nav-link scrollto" href="#hotline"><i class="fa fa-phone-square"></i>Hotline</a></li>
           <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
 
         </ul>
@@ -108,47 +95,47 @@
 
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <section id="dashboard" class="kotak">
        <div class="container">
 
         <div class="row">
 
           <div class="col-lg-3 col-md-6">
-            <div class="count-box">
+            <div class="kotak-box">
               <i><img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"></i>
                 <p>TOTAL POSITIF</p>
-                <h2 class="mb-0 number-font"><?php echo $positif['value'] ?> </h2>
+                <h2><?php echo $positif['value'] ?> </h2>
                 <br>
               <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
+            <div class="kotak-box">
               <i ><img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"></i>
               <p>TOTAL SEMBUH</p>
-               <h2 class="mb-0 number-font"><?php echo $sembuh['value'] ?></h2>
+               <h2><span data-toggle="counter-up"><?php echo $sembuh['value'] ?></span></h2>
                <br>
               <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
+            <div class="kotak-box">
               <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
               <p>TOTAL MENINGGAL</p>
-                <h2 class="mb-0 number-font"><?php echo $meninggal['value'] ?></h2>
+                <h2><?php echo $meninggal['value'] ?></h2>
               <br>
               <p>Orang</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
+            <div class="kotak-box">
               <i ><img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"></i>
               <h2 >INDONESIA</h2>
        
-                      <p class="mb-0 number-font">{{ $positif1 }}&nbsp; POSITIF, &nbsp;{{$sembuh1}}&nbsp;SEMBUH,&nbsp; {{$meninggal1}}&nbsp;MENINGGAL</p>
+                      <p class="mb-0 number-font">{{ $positif1 }}&nbsp; POSITIF <br>{{$sembuh1}}&nbsp;SEMBUH <br> {{$meninggal1}}&nbsp;MENINGGAL</p>
           
                 
               
@@ -158,7 +145,7 @@
         </div>
 
        </div>
-    </section><!-- End Counts Section -->
+    </section><!-- End kotaks Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="" class="services">
@@ -224,8 +211,8 @@
   
           <div class="row">
               <div class="card-body" >
-                    <div class="table-responsive">
-                          <table id="example2" class="table table-bordered" >
+                    <div class="height:600px;overflow:auto;margin-right:15px;">
+                          <table  class="table table-bordered"  fixed-header>
                              <thead>
                               <tr>
                               <th scope="col">No</th>
@@ -265,7 +252,7 @@
   
         </div>
       </section><!-- End Services Section -->
-      <section id="counts" class="counts">
+      <section id="hotline" class="kotak">
           <div class="container">
               <div class="section-title">
                   <h2>Coronavirus Hotline Indonesia</h2>
@@ -275,38 +262,38 @@
            <div class="row">
    
              <div class="col-lg-3 col-md-6">
-               <div class="count-box">
+               <div class="kotak-box">
                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                   <a href="tel:0215210441"><h3>021-5210-441 </h3></a>
                    <br>
                    <p>Kementrian Kesehatan</p>
                </div>
              </div>
    
              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-               <div class="count-box">
+               <div class="kotak-box">
                   <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                  <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                  <a href="tel:081212123119"><h3>0812-1212-3119</h3></a>
                   <br>
                   <p>Kementrian Kesehatan</p>
                </div>
              </div>
    
              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-               <div class="count-box">
+               <div class="kotak-box">
                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
                  
-                 <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
+                 <a href="tel:112"><h3>112 </h3></a>
                  <br>
                  <p>Pemprov DKI Jakarta</p>
                </div>
              </div>
    
              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-               <div class="count-box">
+               <div class="kotak-box">
                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
                  
-                 <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
+                 <a href="tel:0813-8837-6955"><h3>0813-8837-6955 </h3></a>
                  <br>
                  <p>Pemprov DKI Jakarta</p>
                  
@@ -315,91 +302,92 @@
     
    
            </div>
-           <br>
-         <div class="row">
-              <div class="col-lg-3 col-md-6">
-                <div class="count-box">
-                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                    <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
-                    <br>
-                    <p>Kementrian Kesehatan</p>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                <div class="count-box">
-                   <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
-                   <br>
-                   <p>Kementrian Kesehatan</p>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                <div class="count-box">
-                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
-                  
-                  <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
-                  <br>
-                  <p>Pemprov DKI Jakarta</p>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                <div class="count-box">
-                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
-                  
-                  <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
-                  <br>
-                  <p>Pemprov DKI Jakarta</p>
-                  
-                </div>
-              </div>
-          </div>
-          <br>
+
+        <br>
           <div class="row">
    
               <div class="col-lg-3 col-md-6">
-                <div class="count-box">
-                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                    <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatengnew.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:0243580713"><h3>024-358-0713 </h3></a>
                     <br>
-                    <p>Kementrian Kesehatan</p>
+                    <p>Pemprov Jawa Tengah</p>
                 </div>
               </div>
     
               <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                <div class="count-box">
-                   <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
-                   <a href="tel:0215210441"><h2 class="mb-0 number-font">021-5210-441 </h2></a>
+                <div class="kotak-box">
+                   <i><img src="{{asset('img/jatengnew.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:082313600560"><h3>0823-1360-0560 </h3></a>
                    <br>
-                   <p>Kementrian Kesehatan</p>
+                   <p>Pemprov Jawa Tengah</p>
                 </div>
               </div>
     
               <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                <div class="count-box">
-                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatim.png')}}" width="50" height="50" alt="Positif"></i>
                   
-                  <a href="tel:112"><h2 class="mb-0 number-font">112 </h2></a>
+                  <a href="tel:0318430313"><h3>031-843-0313 </h3></a>
                   <br>
-                  <p>Pemprov DKI Jakarta</p>
+                  <p>Pemprov Jawa Timur</p>
                 </div>
               </div>
     
               <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                <div class="count-box">
-                  <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatim.png')}}" width="50" height="50" alt="Positif"></i>
                   
-                  <a href="tel:0813-8837-6955"><h2 class="mb-0 number-font">0813-8837-6955 </h2></a>
+                  <a href="tel:081334367800"><h3>0813-3436-7800 </h3></a>
                   <br>
-                  <p>Pemprov DKI Jakarta</p>
+                  <p>Pemprov Jawa Timur</p>
                   
                 </div>
               </div>
      
     
             </div>
+           <br>
+         <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jabar.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:119"><h3>119 </h3></a>
+                    <br>
+                    <p>Pemprov Jawa Barat</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="kotak-box">
+                   <i><img src="{{asset('img/jabar.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h3>0811-209-3306 </h3></a>
+                   <br>
+                   <p>Pemprov Jawa Barat</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/yogya.jpg')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:0274555585"><h3>0274-555-585</h3></a>
+                  <br>
+                  <p>Pemprov D.I Yogyakarta</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/yogya.jpg')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:08112764800"><h3>0811-2764-800 </h3></a>
+                  <br>
+                  <p>Pemprov D.I Yogyakarta</p>
+                  
+                </div>
+              </div>
+        </div>
    
         </div>
        </section>
@@ -640,17 +628,14 @@
   <script src="assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets2/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets2/vendor/php-email-form/validate.js"></script>
-  <script src="assets2/vendor/purecounter/purecounter.js"></script>
+  <script src="assets2/vendor/counterup/counterup.min.js"></script>
   <script src="assets2/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets2/js/main.js"></script>
   <!-- DataTables -->
-<script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets/sw/sweetalert2.all.min.js')}}"></script>
+  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets2/js/main.js"></script>
+  
   <script>
     $(function () {
       $('#example1').DataTable({
