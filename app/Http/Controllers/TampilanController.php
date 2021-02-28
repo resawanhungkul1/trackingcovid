@@ -9,30 +9,30 @@ class TampilanController extends Controller
 {
     public function tampilan(Type $var = null)
     {
-        $positif = DB::table('rws')
+        $positif1 = DB::table('rws')
             ->select(
-                'kasus2s.positif',
-                'kasus2s.sembuh',
-                'kasus2s.meninggal'
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
             )
             ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.positif');
-        $sembuh = DB::table('rws')
+            ->sum('kasus2s.jumlah_positif');
+        $sembuh1 = DB::table('rws')
             ->select(
-                'kasus2s.positif',
-                'kasus2s.sembuh',
-                'kasus2s.meninggal'
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
             )
             ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.sembuh');
-        $meninggal = DB::table('rws')
+            ->sum('kasus2s.jumlah_sembuh');
+        $meninggal1 = DB::table('rws')
             ->select(
-                'kasus2s.positif',
-                'kasus2s.sembuh',
-                'kasus2s.meninggal'
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
             )
             ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.meninggal');
+            ->sum('kasus2s.jumlah_meninggal');
 
 
         // $global = file_get_contents('https://api.kawalcorona.com/positif');
