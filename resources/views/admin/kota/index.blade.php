@@ -7,7 +7,6 @@ active
     <div class="row justify-content-center">
     
             <div class="card">
-               
 
                 <div class="card-body">
                     @if (session('succes'))

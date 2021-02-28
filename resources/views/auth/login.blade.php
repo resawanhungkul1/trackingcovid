@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Log in</title>
+  <title>Tracking Covid-19</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,12 +22,13 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="#"><b>Tracking</b>Covid</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
+    
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
 
       <form action="{{route('login')}}" method="post">
         @csrf
@@ -76,22 +77,13 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
       <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="#">I forgot my password</a>
-      </p>
-      <p class="mb-0">
+<br>
+   <div class="container">
+      <p class="mb-0"><center>
         <a href="{{url('register')}}" class="text-center">Register a new membership</a>
+        </center>
+        </div>
       </p>
     </div>
     <!-- /.login-card-body -->

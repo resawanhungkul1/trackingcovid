@@ -17,7 +17,7 @@ class KecamatanController extends Controller
     public function index()
     {
         $kecamatan=Kecamatan::with('kota')->get();
-        return view('admin.kecamatan.index',compact('kecamatan'));
+        return view('admin.kecamatan.index', compact('kecamatan'));
     }
 
     /**
@@ -28,7 +28,7 @@ class KecamatanController extends Controller
     public function create()
     {
         $kota=Kota::all();
-        return view('admin.kecamatan.create',compact('kota'));
+        return view('admin.kecamatan.create', compact('kota'));
     }
 
     /**
@@ -47,13 +47,13 @@ class KecamatanController extends Controller
          
         
         ];
-        $this->validate($request,[
+        $this->validate($request, [
           
             'nama_kecamatan' => 'required'
-        ],$pesan);
+        ], $pesan);
         
         $kecamatan=new Kecamatan();
-        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
+     
         $kecamatan->id_kota=$request->id_kota;
         $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();
@@ -81,7 +81,7 @@ class KecamatanController extends Controller
     {
         $kecamatan=Kecamatan::findOrFail($id);
         $kota=Kota::all();
-        return view('admin.kecamatan.edit',compact('kecamatan','kota'));
+        return view('admin.kecamatan.edit', compact('kecamatan', 'kota'));
     }
 
     /**
@@ -93,10 +93,8 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        
         $kecamatan=Kecamatan::findOrFail($id);
-        $kecamatan->kode_kecamatan=$request->kode_kecamatan;
+
         $kecamatan->id_kota=$request->id_kota;
         $kecamatan->nama_kecamatan=$request->nama_kecamatan;
         $kecamatan->save();

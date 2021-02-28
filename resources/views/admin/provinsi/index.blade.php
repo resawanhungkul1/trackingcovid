@@ -8,7 +8,7 @@ active
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
               
 
@@ -44,7 +44,6 @@ active
                                                             @csrf
                                                             @method('DELETE')
                                                              <a class="btn btn-outline-success"   href="{{route('provinsi.edit',$item->id)}}" ><i class="fas fa-edit">Edit</i></a>
-                                                             <button type="submit" id="tombol" onclick="Swal('Uji Coba','Latihan','succes')">klik</button>
                                                              <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin ?')">Hapus<i class="fa fa-trash-alt"></i>
                                                         </form>
                                                         </td>

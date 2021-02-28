@@ -881,6 +881,7 @@ section {
   position: relative;
   text-align: center;
   background: #fff;
+   border-radius: 10px;
 }
 
 .kotak .kotak-box i {

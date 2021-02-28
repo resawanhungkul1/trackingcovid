@@ -18,7 +18,7 @@ active
                                     @livewire('tracking-covid')
                                     @livewireStyles
                                     <div class="form-group">
-                                    <button type="submit" class="float-right btn btn-info">Submit</button>
+                                    <button type="submit" class="float-right btn btn-info">Simpan</button>
                                     </div>
                                 </form>
                             </div>

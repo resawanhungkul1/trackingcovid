@@ -18,35 +18,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/backend', function () {
+Route::get('/admin', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/i', function(){
+Route::get('/i', function () {
     return view('layouts.master');
 });
-Route::get('/index', function(){
+Route::get('/index', function () {
     return view('admin.dashboard.index');
 });
 // Route::get('/provinsi', function(){
 //     return view('admin.provinsi.index');
 // });
-Route::get('/kota',function(){
+Route::get('/kota', function () {
     return view('admin.kota.index');
 });
-Route::get('/kecamatan',function(){
+Route::get('/kecamatan', function () {
     return view('admin.kecamatan.index');
 });
-Route::get('/kelurahan',function(){
+Route::get('/kelurahan', function () {
     return view('admin.kelurahan.index');
 });
-Route::get('/rw',function(){
+Route::get('/rw', function () {
     return view('admin.rw.index');
 });
-Route::get('/laporan',function(){
+Route::get('/laporan', function () {
     return view('admin.laporan.index');
 });
 // provinsi
@@ -100,13 +100,12 @@ Route::get('/laporan',function(){
 // Route::get('/laporan-delete/{id}', [App\Http\Controllers\Kasus2Controller::class, 'destroy'])->name('laporan-delete');
 
 Route::group([ 'middleware' => ['auth']], function () {
-Route::resource('provinsi',ProvinsiController::class);
-Route::resource('kota',KotaController::class);
-Route::resource('kecamatan',KecamatanController::class);
-Route::resource('kelurahan',KelurahanController::class);
-Route::resource('rw',RwController::class);
-Route::resource('laporan',Kasus2Controller::class);
-
+    Route::resource('provinsi', ProvinsiController::class);
+    Route::resource('kota', KotaController::class);
+    Route::resource('kecamatan', KecamatanController::class);
+    Route::resource('kelurahan', KelurahanController::class);
+    Route::resource('rw', RwController::class);
+    Route::resource('laporan', Kasus2Controller::class);
 });
  Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'provinsi'])->name('dashboard');
  Route::get('/', [App\Http\Controllers\TampilanController::class, 'tampilan'])->name('tampilan');

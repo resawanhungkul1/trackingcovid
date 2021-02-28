@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "500dc6141709a5158c7bda924b02dea5",
+    "content-hash": "9eca5c394c2c7cb16c505ebb8f16ecc6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -516,6 +516,57 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "flynsarmy/csv-seeder",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
+                "reference": "847905569e9921e5d184a630e2d348f929b69401"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/847905569e9921e5d184a630e2d348f929b69401",
+                "reference": "847905569e9921e5d184a630e2d348f929b69401",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flynsarmy\\CsvSeeder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flyn San",
+                    "email": "flynsarmy@gmail.com"
+                }
+            ],
+            "description": "Allows seeding of the database with CSV files",
+            "keywords": [
+                "csv",
+                "laravel",
+                "seed",
+                "seeding",
+                "seeds"
+            ],
+            "support": {
+                "issues": "https://github.com/Flynsarmy/laravel-csv-seeder/issues",
+                "source": "https://github.com/Flynsarmy/laravel-csv-seeder/tree/master"
+            },
+            "time": "2020-03-26T14:29:37+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",

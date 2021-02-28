@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Flynsarmy\CsvSeeder\CsvSeeder;
 
-class ProvinsiSeeder extends CsvSeeder
+class KelurahanSeeder extends CsvSeeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +17,16 @@ class ProvinsiSeeder extends CsvSeeder
      */
     public function __construct()
     {
-        $this->table = 'provinsis';
-        $this->filename = base_path().'/database/seeders/csvs/provinsi.csv';
+        $this->table = 'kelurahans';
+        $this->filename = base_path().'/database/seeders/csvs/kelurahan.csv';
     }
+
     public function run()
     {
-
         // Recommended when importing larger CSVs
         DB::disableQueryLog();
 
-        // Uncomment the below to wipe the table clean	 before populating
+        // Uncomment the below to wipe the table clean before populating
         // DB::table($this->table)->truncate();
 
         parent::run();

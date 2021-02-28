@@ -15,6 +15,7 @@ active
                             <form action="{{route('laporan.update', $laporan->id)}}" class="form-horizontal m-t-30" method="post">
                             @csrf
                             @method('put')
+                            @livewireScripts
                             @livewire('tracking-covid',['selectedRw' => $laporan->id_rw, 'idt' => $laporan->id])
                             <div class="form-group">
                             <button type="submit" class="float-right btn btn-info">Edit</button>

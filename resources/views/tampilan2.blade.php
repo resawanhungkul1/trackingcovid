@@ -53,22 +53,7 @@
         $dunia = json_decode($datadunia, TRUE);
       ?>
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-        <i class="icofont-google-map"></i> A108 Adam Street, NY
-      </div>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
-    </div>
-  </div>
+ 
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -80,34 +65,14 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#departments">Departments</a></li>
-          <li><a href="#doctors">Doctors</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#dashboard">Dashboard</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#hotline"><i class="fa fa-phone-square"></i>Hotline</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#appointment" class="appointment-btn scrollto">Make an Appointment</a>
 
     </div>
   </header><!-- End Header -->
@@ -129,6 +94,7 @@
 
 
     <!-- ======= Counts Section ======= -->
+    
     <section id="dashboard" class="counts">
        <div class="container">
 
@@ -180,8 +146,257 @@
 
        </div>
     </section><!-- End Counts Section -->
+        <section id="" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Data Indonesia Berdasarkan provinsi</h2>
+        </div>
+
+        <div class="row">
+                <div class="card-body" >
+                      <div class="table-responsive">
+                            <table id="example1" class="table table-bordered" >
+                               <thead>
+                                <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Provinsi</th>
+                                <th scope="col">Positif</th>
+                                <th scope="col">Sembuh</th>
+                                <th scope="col">Meninggal</th>
+                                </tr>
+                               </thead>
+                               <tbody>
+        
+                              @php
+                                  $no = 1;    
+                              @endphp
+                              <?php
+                                  foreach ($provinsi as  $value){
+          
+                                  
+                                  ?>
+                              <tr>
+                                  <td> <?php echo $no++ ?></td>
+                                  <td> {{$value->nama_provinsi}}</td>
+                                  <td> {{$value->jumlah_positif}}</td>
+                                  <td> {{$value->jumlah_sembuh}}</td>
+                                  <td> {{$value->jumlah_meninggal}}</td>
+                               
+                              
+                              </tr>
+                                  <?php 
+                              
+                              } ?>
+                               </tbody>
+                            </table>
+                      </div>
+                
+              </div>
+    
+            </div>
+
+      </div>
+    </section>
+    <section id="services" class="services">
+            <div class="container">
+      
+              <div class="section-title">
+                <h2>Data  Kasus Coronavirus Global</h2>
+              </div>
+      
+              <div class="row">
+              
+                 
+                      <div class="card-body" >
+                         <div style="height:600px;overflow:auto;margin-right:15px;">
+                                 <table class="table table-bordered"  fixed-header  >
+                                 <thead>
+                                     <tr>
+                                     <th scope="col">No</th>
+                                     <th scope="col">Negara</th>
+                                     <th scope="col">Positif</th>
+                                     <th scope="col">Sembuh</th>
+                                     <th scope="col">Meninggal</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+             
+                                 @php
+                                     $no = 1;    
+                                 @endphp
+                                 <?php
+                                     foreach  ($dunia as $key =>$value){
+             
+                                     
+                                     ?>
+                                 <tr>
+                                     <td> <?php echo $no++ ?></td>
+                                     <td> <?php echo $value['attributes']['Country_Region'] ?></td>
+                                     <td> <?php echo $value['attributes']['Confirmed'] ?></td>
+                                     <td><?php echo $value['attributes']['Recovered']?></td>
+                                     <td><?php echo $value['attributes']['Deaths']?></td>
+                                 </tr>
+                                     <?php 
+                                 
+                                 } ?>
+                                 </tbody>
+                                 </table>
+                                
+                               
+                    
+                   </div>
+                  
+                </div>
+      
+              </div>
+      
+            </div>
+    </section><!-- End Services Section -->
 
     <!-- ======= Services Section ======= -->
+      <!-- End Counts Section -->
+    <section id="hotline" class="kotak">
+          <div class="container">
+              <div class="section-title">
+                  <h2>Coronavirus Hotline Indonesia</h2>
+                  <p>Layanan darurat via telepon yang di sediakan oleh Kemkes dan juga Pemprov DKI Jakarta</p>
+                </div>
+                <br>
+           <div class="row">
+   
+             <div class="col-lg-3 col-md-6">
+               <div class="kotak-box">
+                 <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h3>021-5210-441 </h3></a>
+                   <br>
+                   <p>Kementrian Kesehatan</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+               <div class="kotak-box">
+                  <i><img src="{{asset('img/unnamed-9mT.png')}}" width="50" height="50" alt="Positif"></i>
+                  <a href="tel:081212123119"><h3>0812-1212-3119</h3></a>
+                  <br>
+                  <p>Kementrian Kesehatan</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+               <div class="kotak-box">
+                 <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                 
+                 <a href="tel:112"><h3>112 </h3></a>
+                 <br>
+                 <p>Pemprov DKI Jakarta</p>
+               </div>
+             </div>
+   
+             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+               <div class="kotak-box">
+                 <i><img src="{{asset('img/logo-dki.png')}}" width="50" height="50" alt="Positif"></i>
+                 
+                 <a href="tel:0813-8837-6955"><h3>0813-8837-6955 </h3></a>
+                 <br>
+                 <p>Pemprov DKI Jakarta</p>
+                 
+               </div>
+             </div>
+    
+   
+           </div>
+
+        <br>
+          <div class="row">
+   
+              <div class="col-lg-3 col-md-6">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatengnew.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:0243580713"><h3>024-358-0713 </h3></a>
+                    <br>
+                    <p>Pemprov Jawa Tengah</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="kotak-box">
+                   <i><img src="{{asset('img/jatengnew.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:082313600560"><h3>0823-1360-0560 </h3></a>
+                   <br>
+                   <p>Pemprov Jawa Tengah</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatim.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:0318430313"><h3>031-843-0313 </h3></a>
+                  <br>
+                  <p>Pemprov Jawa Timur</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jatim.png')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:081334367800"><h3>0813-3436-7800 </h3></a>
+                  <br>
+                  <p>Pemprov Jawa Timur</p>
+                  
+                </div>
+              </div>
+     
+    
+            </div>
+           <br>
+         <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/jabar.png')}}" width="50" height="50" alt="Positif"></i>
+                    <a href="tel:119"><h3>119 </h3></a>
+                    <br>
+                    <p>Pemprov Jawa Barat</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="kotak-box">
+                   <i><img src="{{asset('img/jabar.png')}}" width="50" height="50" alt="Positif"></i>
+                   <a href="tel:0215210441"><h3>0811-209-3306 </h3></a>
+                   <br>
+                   <p>Pemprov Jawa Barat</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/yogya.jpg')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:0274555585"><h3>0274-555-585</h3></a>
+                  <br>
+                  <p>Pemprov D.I Yogyakarta</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="kotak-box">
+                  <i><img src="{{asset('img/yogya.jpg')}}" width="50" height="50" alt="Positif"></i>
+                  
+                  <a href="tel:08112764800"><h3>0811-2764-800 </h3></a>
+                  <br>
+                  <p>Pemprov D.I Yogyakarta</p>
+                  
+                </div>
+              </div>
+        </div>
+   
+        </div>
+       </section>
+
+
        <section id="services" class="services">
             <div class="container">
       

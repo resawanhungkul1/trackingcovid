@@ -28,11 +28,7 @@ active
                                             <input type="text" name="nama_kecamatan" value="{{$kecamatan->nama_kecamatan}}" class="form-control" >
                                           
                                     </div>
-                                    <div class="from-group">
-                                        <label for="">Kode Kecamatan</label>
-                                            <input type="text" name="kode_kecamatan" value="{{$kecamatan->kode_kecamatan}}" class="form-control" >
-                                          
-                                    </div>
+               
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" > Simpan </button>
                                         <br>
