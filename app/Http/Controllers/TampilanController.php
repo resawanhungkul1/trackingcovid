@@ -43,17 +43,20 @@ class TampilanController extends Controller
 
         // Table Provinsi
         $provinsi = DB::table('provinsis')
+                ->select(
+                    'provinsis.id',
+                    'provinsis.nama_provinsi',
+                    'provinsis.kode_provinsi',
+                    DB::raw('sum(kasus2s.Jumlah_positif) as jumlah_positif'),
+                    DB::raw('sum(kasus2s.jumlah_sembuh) as jumlah_sembuh'),
+                    DB::raw('sum(kasus2s.jumlah_meninggal) as jumlah_meninggal')
+                )
                   ->join('kotas', 'kotas.id_provinsi', '=', 'provinsis.id')
                   ->join('kecamatans', 'kecamatans.id_kota', '=', 'kotas.id')
                   ->join('kelurahans', 'kelurahans.id_kecamatan', '=', 'kecamatans.id')
                   ->join('rws', 'rws.id_kelurahan', '=', 'kelurahans.id')
                   ->join('kasus2s', 'kasus2s.id_rw', '=', 'rws.id')
-                  ->select(
-                      'nama_provinsi',
-                      DB::raw('SUM(kasus2s.jumlah_positif) as jumlah_positif'),
-                      DB::raw('SUM(kasus2s.jumlah_sembuh) as jumlah_sembuh'),
-                      DB::raw('SUM(kasus2s.jumlah_meninggal) as jumlah_meninggal')
-                  )
+
                   ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC')
                   ->get();
 
