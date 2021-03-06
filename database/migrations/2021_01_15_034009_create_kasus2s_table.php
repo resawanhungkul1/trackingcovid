@@ -17,9 +17,9 @@ class CreateKasus2sTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_rw')->unsigned();
             $table->foreign('id_rw')->references('id')->on('rws')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('jumlah_positif');
-            $table->string('jumlah_meninggal');
-            $table->string('jumlah_sembuh');
+            $table->integer('jumlah_positif');
+            $table->integer('jumlah_meninggal');
+            $table->integer('jumlah_sembuh');
             $table->date('tanggal');
             $table->timestamps();
         });

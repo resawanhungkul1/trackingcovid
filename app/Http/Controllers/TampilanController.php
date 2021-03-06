@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,7 @@ class TampilanController extends Controller
         // $posglobal = json_decode($global, TRUE);
 
         // Date
-        // $tanggal = Carbon::now()->format('D d-M-Y H:i:s');
+        $tanggal = Carbon::now()->format('D d-M-Y H:i:s');
 
         // Table Provinsi
         $provinsi = DB::table('provinsis')
@@ -66,7 +67,7 @@ class TampilanController extends Controller
             
       
 
-        return view('tampilan', compact('provinsi', 'positif1', 'sembuh1', 'meninggal1'));
+        return view('tampilan', compact('provinsi', 'positif1', 'sembuh1', 'meninggal1', 'tanggal'));
     }
     public function tampilan2(Type $var = null)
     {

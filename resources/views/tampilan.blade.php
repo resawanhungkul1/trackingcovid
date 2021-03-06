@@ -43,20 +43,7 @@
 </head>
 
 <body>
-        <?php
-            $datapositif = file_get_contents("https://api.kawalcorona.com/positif");
-            $positif = json_decode($datapositif, TRUE);
-            $datasembuh = file_get_contents("https://api.kawalcorona.com/sembuh");
-            $sembuh = json_decode($datasembuh, TRUE);
-            $datameninggal = file_get_contents("https://api.kawalcorona.com/meninggal");
-            $meninggal = json_decode($datameninggal, TRUE);
-            $dataid = file_get_contents("https://api.kawalcorona.com/indonesia");
-            $id = json_decode($dataid, TRUE);
-            $dataidprovinsi = file_get_contents("https://api.kawalcorona.com/indonesia/provinsi");
-            $idprovinsi = json_decode($dataidprovinsi, TRUE);
-            $datadunia= file_get_contents("https://api.kawalcorona.com/");
-            $dunia = json_decode($datadunia, TRUE);
-          ?>
+
   <!-- ======= Top Bar ======= -->
 
   <!-- ======= Header ======= -->
@@ -101,47 +88,42 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="kotak-box">
               <i><img src="{{asset('img/sad-u6e.png')}}" width="50" height="50" alt="Positif"></i>
                 <p>TOTAL POSITIF</p>
-                <h2><?php echo $positif['value'] ?> </h2>
+                <h2>{{$positif1}}  </h2>
                 <br>
               <p>Orang</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
             <div class="kotak-box">
               <i ><img src="{{asset('img/happy-ipM.png')}}" width="50" height="50" alt="Positif"></i>
               <p>TOTAL SEMBUH</p>
-               <h2><?php echo $sembuh['value'] ?></h2>
+               <h2>{{ $sembuh1}}</h2>
                <br>
               <p>Orang</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
             <div class="kotak-box">
               <i><img src="{{asset('img/emoji-LWx.png')}}" width="50" height="50" alt="Positif"></i>
               <p>TOTAL MENINGGAL</p>
-                <h2><?php echo $meninggal['value'] ?></h2>
+                <h2>{{$meninggal1}}</h2>
               <br>
               <p>Orang</p>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="kotak-box">
-              <i ><img src="{{asset('img/indonesia-PZq.png')}}" width="50" height="50" alt="Positif"></i>
-              <h2 >INDONESIA</h2>
-       
-                      <p class="mb-0 number-font">{{ $positif1 }}&nbsp; POSITIF <br>{{$sembuh1}}&nbsp;SEMBUH <br> {{$meninggal1}}&nbsp;MENINGGAL</p>
-          
-                
-              
-            </div>
+          <br>
+          <div class="col text-center">
+            <br>
+            <h6>{{$tanggal}}</h6>
           </div>
+
+
 
         </div>
 
@@ -201,7 +183,7 @@
 
       </div>
     </section><!-- End Services Section -->
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
             <div class="container">
       
               <div class="section-title">
@@ -255,7 +237,7 @@
               </div>
       
             </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Services Section --> --}}
       <section id="hotline" class="kotak">
           <div class="container">
               <div class="section-title">
@@ -490,20 +472,20 @@
                   <div class="info">
                     <div class="address">
                       <i class="bi bi-geo-alt"></i>
-                      <h4>Location:</h4>
-                      <p>A108 Adam Street, New York, NY 535022</p>
+                      <h4>Lokasi</h4>
+                      <p>Kab.Bandung</p>
                     </div>
       
                     <div class="email">
                       <i class="bi bi-envelope"></i>
                       <h4>Email:</h4>
-                      <p>info@example.com</p>
+                      <p>Resawanhungkul@gmail.com</p>
                     </div>
       
                     <div class="phone">
                       <i class="bi bi-phone"></i>
-                      <h4>Call:</h4>
-                      <p>+1 5589 55488 55s</p>
+                      <h4>Telepon:</h4>
+                      <p>+62 881-5175-063</p>
                     </div>
       
                   </div>
