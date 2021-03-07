@@ -58,7 +58,7 @@ class TampilanController extends Controller
                                      DB::raw('sum(kasus2s.jumlah_sembuh) as jumlah_sembuh'),
                                      DB::raw('sum(kasus2s.jumlah_meninggal) as jumlah_meninggal')
                                  )
-                  ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC')
+                  ->groupBy('provinsis.id')->orderBy('nama_provinsi', 'ASC')
                   ->get();
 
         // Table Global
