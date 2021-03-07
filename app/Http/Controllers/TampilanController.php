@@ -10,8 +10,30 @@ class TampilanController extends Controller
 {
     public function tampilan(Type $var = null)
     {
-
-
+        $positif1 = DB::table('rws')
+            ->select(
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
+            )
+            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
+            ->sum('kasus2s.jumlah_positif');
+        $sembuh1 = DB::table('rws')
+            ->select(
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
+            )
+            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
+            ->sum('kasus2s.jumlah_sembuh');
+        $meninggal1 = DB::table('rws')
+            ->select(
+                'kasus2s.jumlah_positif',
+                'kasus2s.jumlah_sembuh',
+                'kasus2s.jumlah_meninggal'
+            )
+            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
+            ->sum('kasus2s.jumlah_meninggal');
 
 
         // $global = file_get_contents('https://api.kawalcorona.com/positif');
@@ -36,8 +58,8 @@ class TampilanController extends Controller
                   ->join('rws', 'rws.id_kelurahan', '=', 'kelurahans.id')
                   ->join('kasus2s', 'kasus2s.id_rw', '=', 'rws.id')
 
-                  ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC');
-                  
+                  ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC')
+                  ->get();
 
         // Table Global
         // $datadunia= file_get_contents("https://api.kawalcorona.com/");
