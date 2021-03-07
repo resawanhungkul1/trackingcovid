@@ -10,14 +10,7 @@ class TampilanController extends Controller
 {
     public function tampilan(Type $var = null)
     {
-        $positif = DB::table('rws')
-            ->select(
-                'kasus2s.jumlah_positif',
-                'kasus2s.jumlah_sembuh',
-                'kasus2s.jumlah_meninggal'
-            )
-            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.jumlah_positif');
+
         $sembuh1 = DB::table('rws')
             ->select(
                 'kasus2s.jumlah_positif',
