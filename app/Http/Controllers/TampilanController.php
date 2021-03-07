@@ -36,8 +36,8 @@ class TampilanController extends Controller
                   ->join('rws', 'rws.id_kelurahan', '=', 'kelurahans.id')
                   ->join('kasus2s', 'kasus2s.id_rw', '=', 'rws.id')
 
-                  ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC')
-                  ->get();
+                  ->groupBy('nama_provinsi')->orderBy('nama_provinsi', 'ASC');
+                  
 
         // Table Global
         // $datadunia= file_get_contents("https://api.kawalcorona.com/");
