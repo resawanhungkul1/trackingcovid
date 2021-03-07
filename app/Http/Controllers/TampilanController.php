@@ -11,22 +11,7 @@ class TampilanController extends Controller
     public function tampilan(Type $var = null)
     {
 
-        $sembuh1 = DB::table('rws')
-            ->select(
-                'kasus2s.jumlah_positif',
-                'kasus2s.jumlah_sembuh',
-                'kasus2s.jumlah_meninggal'
-            )
-            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.jumlah_sembuh');
-        $meninggal1 = DB::table('rws')
-            ->select(
-                'kasus2s.jumlah_positif',
-                'kasus2s.jumlah_sembuh',
-                'kasus2s.jumlah_meninggal'
-            )
-            ->join('kasus2s', 'rws.id', '=', 'kasus2s.id_rw')
-            ->sum('kasus2s.jumlah_meninggal');
+
 
 
         // $global = file_get_contents('https://api.kawalcorona.com/positif');
