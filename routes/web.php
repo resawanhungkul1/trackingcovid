@@ -5,6 +5,8 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\RwController;
 use App\Http\Controllers\Kasus2Controller;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,6 +108,7 @@ Route::group([ 'middleware' => ['auth']], function () {
     Route::resource('kelurahan', KelurahanController::class);
     Route::resource('rw', RwController::class);
     Route::resource('laporan', Kasus2Controller::class);
+    Route::resource('users', UserController::class)->middleware('admin');
 });
  Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'provinsi'])->name('dashboard');
  Route::get('/', [App\Http\Controllers\TampilanController::class, 'tampilan'])->name('tampilan');

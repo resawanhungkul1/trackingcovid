@@ -58,18 +58,30 @@
                   <p>Kelurahan</p>
                 </a>
               </li>
+              @if (Auth::user()->role == 'Petugas')
+              @else
+              <li class="nav-item">
+                <a href="{{route('users.index')}}" class="nav-link @stack('rw')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>user</p>
+                </a>
+              </li>
+              @endif
               <li class="nav-item">
                 <a href="{{route('rw.index')}}" class="nav-link @stack('rw')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rw</p>
                 </a>
               </li>
+              @if (Auth::user()->role == 'Petugas')
+              @else
               <li class="nav-item">
                 <a href="{{route('laporan.index')}}" class="nav-link @stack('laporan')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan Kasus</p>
                 </a>
               </li>
+              @endif
  
             </ul>
           </li>
